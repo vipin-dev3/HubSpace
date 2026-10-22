@@ -6,9 +6,7 @@ import {
   Upload,
   RotateCcw,
   FileJson,
-  CheckCircle,
   AlertTriangle,
-  Layers,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 

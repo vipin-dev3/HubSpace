@@ -1,13 +1,11 @@
 import React from 'react';
 import {
-  Sparkles,
   Star,
   Layers,
   ChevronDown,
   ChevronUp,
   Tag,
   X,
-  SlidersHorizontal,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import CategoryIcon from '../common/CategoryIcon';

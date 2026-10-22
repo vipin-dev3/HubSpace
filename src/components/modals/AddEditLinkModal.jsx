@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Globe, Star, Tag, Plus, Check } from 'lucide-react';
+import { X, Globe, Star, Plus } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import { formatUrl, isValidUrl, extractDomain } from '../../utils/urlHelper';
 import FaviconImage from '../common/FaviconImage';
 
 export default function AddEditLinkModal() {
-  const { modalState, setModalState, categories, addLink, updateLink, allTags } = useLinks();
+  const { modalState, setModalState, categories, addLink, updateLink } = useLinks();
   const isOpen = modalState.addEditOpen;
   const editingLink = modalState.editingLink;
   const isEditing = Boolean(editingLink);
@@ -27,14 +27,14 @@ export default function AddEditLinkModal() {
         setTitle(editingLink.title || '');
         setUrl(editingLink.url || '');
         setDescription(editingLink.description || '');
-        setCategoryId(editingLink.categoryId || categories[0]?.id || 'development');
+        setCategoryId(editingLink.categoryId || categories[0]?.id || 'ai-tools');
         setTags(editingLink.tags || []);
         setIsPinned(Boolean(editingLink.isPinned));
       } else {
         setTitle('');
         setUrl('');
         setDescription('');
-        setCategoryId(modalState.preselectedCategory || categories[0]?.id || 'development');
+        setCategoryId(modalState.preselectedCategory || categories[0]?.id || 'ai-tools');
         setTags([]);
         setIsPinned(false);
       }

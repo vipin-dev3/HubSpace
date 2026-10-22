@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bookmark, Star, FolderGit2, MousePointerClick, Sparkles } from 'lucide-react';
+import { Bookmark, Star, FolderGit2, MousePointerClick } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 
 export default function StatsOverview() {

@@ -12,7 +12,7 @@ import { useLinks } from '../../context/LinksContext';
 import FaviconImage from '../common/FaviconImage';
 import { extractDomain } from '../../utils/urlHelper';
 
-export default function LinkRowList({ link, category }) {
+export default function LinkRowList({ link }) {
   const { togglePin, incrementClick, setModalState, setSelectedTag, addToast } = useLinks();
   const [copied, setCopied] = useState(false);
 

@@ -10,7 +10,6 @@ import {
   DownloadCloud,
   X,
   Compass,
-  Sparkles,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import { useTheme } from '../../context/ThemeContext';
@@ -23,11 +22,9 @@ export default function Header() {
     viewMode,
     setViewMode,
     setModalState,
-    filteredLinks,
-    links,
   } = useLinks();
 
-  const { theme, toggleTheme, isDark } = useTheme();
+  const { toggleTheme, isDark } = useTheme();
   const searchInputRef = useRef(null);
 
   // Hook up keyboard shortcuts

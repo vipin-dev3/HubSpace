@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, ExternalLink, PinOff, Sparkles } from 'lucide-react';
+import { Star, ExternalLink, PinOff } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import FaviconImage from '../common/FaviconImage';
-import { extractDomain } from '../../utils/urlHelper';
 
 export default function QuickDock() {
   const { pinnedLinks, togglePin, incrementClick } = useLinks();

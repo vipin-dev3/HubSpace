@@ -94,8 +94,8 @@ my-list/
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/your-username/hubspace.git
-cd hubspace
+git clone https://github.com/vipin-dev3/My-Link-List.git
+cd My-Link-List
 npm install
 ```
 

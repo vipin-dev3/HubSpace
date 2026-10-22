@@ -20,7 +20,21 @@ import {
   Bot,
   Database,
   Shield,
+  ShieldCheck,
   Zap,
+  Film,
+  Tv,
+  Book,
+  Library,
+  Presentation,
+  FileText,
+  Download,
+  QrCode,
+  Gamepad2,
+  FolderGit2,
+  ListFilter,
+  GraduationCap,
+  Boxes,
 } from 'lucide-react';
 
 const ICON_MAP = {
@@ -44,11 +58,26 @@ const ICON_MAP = {
   Bot,
   Database,
   Shield,
+  ShieldCheck,
   Zap,
+  Film,
+  Tv,
+  Book,
+  Library,
+  Presentation,
+  FileText,
+  Download,
+  QrCode,
+  Gamepad2,
+  FolderGit2,
+  ListFilter,
+  GraduationCap,
+  Boxes,
 };
 
 export default function CategoryIcon({ name, className = 'w-5 h-5' }) {
   const IconComponent = (name && ICON_MAP[name]) || Bookmark;
   return <IconComponent className={className} />;
 }
+
 

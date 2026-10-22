@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Plus, Sparkles } from 'lucide-react';
+import { ChevronDown, Plus } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import CategoryIcon from '../common/CategoryIcon';
 import LinkCardDetailed from './LinkCardDetailed';

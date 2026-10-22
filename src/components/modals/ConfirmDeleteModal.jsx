@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AlertTriangle, Trash2, X } from 'lucide-react';
+import { Trash2, X } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import FaviconImage from '../common/FaviconImage';
 import { extractDomain } from '../../utils/urlHelper';

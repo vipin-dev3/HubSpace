@@ -4,7 +4,6 @@ import {
   Copy,
   Check,
   Star,
-  MoreVertical,
   Edit2,
   Trash2,
   MousePointerClick,

@@ -4,10 +4,18 @@ import { INITIAL_CATEGORIES, INITIAL_LINKS } from '../data/linksData';
 
 const LinksContext = createContext();
 
+const CURRENT_DATA_VERSION = 'v2_2026_10_22';
+
 export function LinksProvider({ children }) {
   // --- Persistent State ---
   const [categories, setCategories] = useState(() => {
     try {
+      const savedVersion = localStorage.getItem('hubspace_data_version');
+      if (savedVersion !== CURRENT_DATA_VERSION) {
+        localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
+        localStorage.setItem('hubspace_categories', JSON.stringify(INITIAL_CATEGORIES));
+        return INITIAL_CATEGORIES;
+      }
       const saved = localStorage.getItem('hubspace_categories');
       return saved ? JSON.parse(saved) : INITIAL_CATEGORIES;
     } catch {
@@ -17,6 +25,28 @@ export function LinksProvider({ children }) {
 
   const [links, setLinks] = useState(() => {
     try {
+      const savedVersion = localStorage.getItem('hubspace_data_version');
+      if (savedVersion !== CURRENT_DATA_VERSION) {
+        localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
+        const saved = localStorage.getItem('hubspace_links');
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved);
+            const initialIds = new Set(INITIAL_LINKS.map((l) => l.id));
+            const customUserLinks = parsed.filter(
+              (l) => !initialIds.has(l.id) && l.id && !l.id.startsWith('link-')
+            );
+            const combined = [...INITIAL_LINKS, ...customUserLinks];
+            localStorage.setItem('hubspace_links', JSON.stringify(combined));
+            return combined;
+          } catch {
+            localStorage.setItem('hubspace_links', JSON.stringify(INITIAL_LINKS));
+            return INITIAL_LINKS;
+          }
+        }
+        localStorage.setItem('hubspace_links', JSON.stringify(INITIAL_LINKS));
+        return INITIAL_LINKS;
+      }
       const saved = localStorage.getItem('hubspace_links');
       return saved ? JSON.parse(saved) : INITIAL_LINKS;
     } catch {
@@ -96,7 +126,7 @@ export function LinksProvider({ children }) {
       title: newLinkData.title.trim(),
       url: newLinkData.url.trim(),
       description: newLinkData.description?.trim() || '',
-      categoryId: newLinkData.categoryId || (categories[0]?.id || 'development'),
+      categoryId: newLinkData.categoryId || (categories[0]?.id || 'ai-tools'),
       tags: Array.isArray(newLinkData.tags) ? newLinkData.tags : [],
       isPinned: Boolean(newLinkData.isPinned),
       clickCount: 0,
