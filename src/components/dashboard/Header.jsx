@@ -10,12 +10,15 @@ import {
   DownloadCloud,
   X,
   Compass,
+  LogOut,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import { useTheme } from '../../context/ThemeContext';
+import { useAuth } from '../../context/AuthContext';
 import { useKeyboardShortcuts } from '../../hooks/useKeyboardShortcuts';
 
 export default function Header() {
+  const { logout } = useAuth();
   const {
     searchQuery,
     setSearchQuery,
@@ -155,6 +158,17 @@ export default function Header() {
               aria-label="Toggle theme"
             >
               {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
+            </button>
+
+            {/* Logout Button */}
+            <button
+              onClick={logout}
+              className="p-2 sm:px-3 sm:py-2 rounded-xl text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-[#121624] hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-500/10 dark:hover:bg-rose-500/15 border border-slate-200/80 dark:border-white/10 transition-colors flex items-center gap-1.5"
+              title="Sign Out (Dracula)"
+              aria-label="Sign out"
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="hidden xl:inline">Logout</span>
             </button>
 
             {/* + Add Link Action Button */}

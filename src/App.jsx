@@ -9,9 +9,12 @@ import AddEditLinkModal from './components/modals/AddEditLinkModal';
 import ImportExportModal from './components/modals/ImportExportModal';
 import ConfirmDeleteModal from './components/modals/ConfirmDeleteModal';
 import ToastContainer from './components/common/Toast';
+import LoginPage from './components/auth/LoginPage';
 import { useLinks } from './context/LinksContext';
+import { useAuth } from './context/AuthContext';
 
 export default function App() {
+  const { isAuthenticated } = useAuth();
   const { categories, filteredLinks, selectedCategory } = useLinks();
 
   // Group filtered links by category
@@ -55,6 +58,10 @@ export default function App() {
     // "all": show categories that have matching links (or show all if no search query)
     return categories.filter((cat) => (linksByCategory[cat.id]?.length || 0) > 0);
   }, [categories, selectedCategory, linksByCategory]);
+
+  if (!isAuthenticated) {
+    return <LoginPage />;
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#0a0d14] text-slate-900 dark:text-slate-100 transition-colors">
