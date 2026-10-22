@@ -1,14 +1,13 @@
 /**
- * HubSpace Initial Links & Category Data
- * Contains comprehensive curated developer, AI, design, cloud, cybersecurity,
- * education, entertainment, book, and media bookmarks.
+ * HubSpace Curated Links & Category Data
+ * Contains exclusively user-provided links categorized by domain.
  */
 
 export const INITIAL_CATEGORIES = [
   {
     id: 'ai-tools',
     name: 'AI Tools',
-    description: 'Benchmark arenas, LLM routers, foundation models, and generative intelligence.',
+    description: 'Benchmark arenas, model hubs, generative UI, and AI productivity platforms.',
     icon: 'Sparkles',
     color: 'purple',
     gradient: 'from-purple-500/20 to-indigo-500/20',
@@ -18,7 +17,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'movies-anime',
     name: 'Movies And TV Shows / Anime',
-    description: 'Online streaming platforms, anime series, and cinema directories.',
+    description: 'Online media streaming platforms, anime series, and entertainment portals.',
     icon: 'Film',
     color: 'rose',
     gradient: 'from-rose-500/20 to-red-500/20',
@@ -28,7 +27,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'education-coding',
     name: 'Education / Courses / Coding / Essay',
-    description: 'Certified online courses, study assistants, academic essay scanners, and programming practice.',
+    description: 'Certified courses, AI study companions, essay analyzers, and interactive programming.',
     icon: 'GraduationCap',
     color: 'emerald',
     gradient: 'from-emerald-500/20 to-green-500/20',
@@ -38,7 +37,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'books',
     name: 'Books',
-    description: 'Open libraries, digital archives, scientific literature, and free eBook collections.',
+    description: 'Open digital libraries, public domain literature, PDF archives, and academic repositories.',
     icon: 'Book',
     color: 'amber',
     gradient: 'from-amber-500/20 to-yellow-500/20',
@@ -48,7 +47,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'presentation-pdf',
     name: 'Presentation / PDF',
-    description: 'AI presentation builders, interactive slides, and smart PDF retention tools.',
+    description: 'AI slide creators, presentation generators, and PDF flashcard retention tools.',
     icon: 'Presentation',
     color: 'violet',
     gradient: 'from-violet-500/20 to-purple-500/20',
@@ -58,7 +57,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'softwares-tools',
     name: 'Softwares / Tools',
-    description: 'Bulk software installers, curated tool directories, name generators, and digital cleanup suites.',
+    description: 'Bulk software updaters, curated tool directories, name generators, and privacy cleaners.',
     icon: 'Boxes',
     color: 'cyan',
     gradient: 'from-cyan-500/20 to-sky-500/20',
@@ -68,7 +67,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'download-transfer',
     name: 'Download / Deleted / Transfer',
-    description: 'Fast ad-free media downloaders, P2P file transfers, and deleted content retrieval.',
+    description: 'Ad-free media downloaders, P2P browser file sharing, and deleted digital asset recovery.',
     icon: 'Download',
     color: 'teal',
     gradient: 'from-teal-500/20 to-emerald-500/20',
@@ -78,7 +77,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'edit-logo-animation-qr',
     name: 'Edit / Logo / Animation / QR',
-    description: 'Automated logo animators, text video editors, dynamic QR trees, and motion design suites.',
+    description: 'Animated logo creators, text-guided video editors, dynamic QR trees, and motion design.',
     icon: 'QrCode',
     color: 'pink',
     gradient: 'from-pink-500/20 to-rose-500/20',
@@ -88,7 +87,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'cyber-security',
     name: 'Cyber / Security',
-    description: 'Threat scanners, OSINT investigators, temporary numbers, breach searches, and privacy tools.',
+    description: 'Threat scanners, OSINT investigators, disposable SMS numbers, breach finders, and privacy tools.',
     icon: 'ShieldCheck',
     color: 'red',
     gradient: 'from-red-500/20 to-rose-500/20',
@@ -98,7 +97,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'games',
     name: 'Games',
-    description: 'Interactive web gaming utilities, puzzle solutions, and strategy calculators.',
+    description: 'Interactive gaming utilities, puzzle solutions, and strategy calculators.',
     icon: 'Gamepad2',
     color: 'lime',
     gradient: 'from-lime-500/20 to-green-500/20',
@@ -108,7 +107,7 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'github',
     name: 'GitHub',
-    description: 'Open-source repositories, developer tools, OSINT scrapers, and CLI software.',
+    description: 'Open-source repositories, developer tools, OSINT frameworks, and CLI utilities.',
     icon: 'FolderGit2',
     color: 'slate',
     gradient: 'from-slate-500/20 to-zinc-500/20',
@@ -118,48 +117,18 @@ export const INITIAL_CATEGORIES = [
   {
     id: 'lists',
     name: 'Lists',
-    description: 'Exhaustive web indexes, OSINT dashboards, media archives, and curated internet resources.',
+    description: 'Exhaustive web indexes, OSINT dashboards, media archives, and curated resources.',
     icon: 'ListFilter',
     color: 'indigo',
     gradient: 'from-indigo-500/20 to-blue-500/20',
     badgeClass: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20 dark:text-indigo-300',
     glowColor: 'rgba(99, 102, 241, 0.25)',
   },
-  {
-    id: 'development',
-    name: 'Development & Frameworks',
-    description: 'Modern front-end frameworks, documentation, APIs, and code hosting platforms.',
-    icon: 'Code2',
-    color: 'blue',
-    gradient: 'from-blue-500/20 to-cyan-500/20',
-    badgeClass: 'bg-blue-500/10 text-blue-400 border-blue-500/20 dark:text-blue-300',
-    glowColor: 'rgba(59, 130, 246, 0.25)',
-  },
-  {
-    id: 'design-tools',
-    name: 'Design & UI Resources',
-    description: 'Inspiration galleries, icon sets, color palette generators, and vector design suites.',
-    icon: 'Palette',
-    color: 'pink',
-    gradient: 'from-pink-500/20 to-rose-500/20',
-    badgeClass: 'bg-pink-500/10 text-pink-400 border-pink-500/20 dark:text-pink-300',
-    glowColor: 'rgba(236, 72, 153, 0.25)',
-  },
-  {
-    id: 'cloud-devops',
-    name: 'Cloud, Database & DevOps',
-    description: 'Serverless deployment, backend platforms, monitoring, and container registries.',
-    icon: 'Cloud',
-    color: 'cyan',
-    gradient: 'from-cyan-500/20 to-teal-500/20',
-    badgeClass: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20 dark:text-cyan-300',
-    glowColor: 'rgba(6, 182, 212, 0.25)',
-  },
 ];
 
 export const INITIAL_LINKS = [
   // ==========================================
-  // 1. AI Tools
+  // 1. AI Tools (10 links)
   // ==========================================
   {
     id: 'link-arena-ai',
@@ -271,42 +240,9 @@ export const INITIAL_LINKS = [
     clickCount: 35,
     createdAt: '2026-01-19T19:00:00.000Z',
   },
-  {
-    id: 'link-chatgpt',
-    title: 'ChatGPT',
-    url: 'https://chatgpt.com',
-    description: 'OpenAI conversational assistant for code debugging, architecture planning, and ideation.',
-    categoryId: 'ai-tools',
-    tags: ['AI', 'LLM', 'Productivity', 'OpenAI'],
-    isPinned: true,
-    clickCount: 290,
-    createdAt: '2026-01-01T10:00:00.000Z',
-  },
-  {
-    id: 'link-claude',
-    title: 'Claude AI',
-    url: 'https://claude.ai',
-    description: 'Anthropic next-generation AI assistant known for nuanced coding, artifacts, and long context understanding.',
-    categoryId: 'ai-tools',
-    tags: ['AI', 'Anthropic', 'Coding', 'LLM'],
-    isPinned: true,
-    clickCount: 240,
-    createdAt: '2026-01-02T12:00:00.000Z',
-  },
-  {
-    id: 'link-v0',
-    title: 'v0 by Vercel',
-    url: 'https://v0.dev',
-    description: 'Generative UI system powered by AI to build production-ready React and Tailwind components.',
-    categoryId: 'ai-tools',
-    tags: ['Generative UI', 'Tailwind', 'React', 'Vercel'],
-    isPinned: false,
-    clickCount: 115,
-    createdAt: '2026-01-03T14:00:00.000Z',
-  },
 
   // ==========================================
-  // 2. Movies And TV Shows / Anime
+  // 2. Movies And TV Shows / Anime (2 links)
   // ==========================================
   {
     id: 'link-streamex',
@@ -332,7 +268,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 3. Education / Courses / Coding / Essay
+  // 3. Education / Courses / Coding / Essay (9 links)
   // ==========================================
   {
     id: 'link-mindluster',
@@ -435,7 +371,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 4. Books
+  // 4. Books (6 links)
   // ==========================================
   {
     id: 'link-open-library',
@@ -505,7 +441,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 5. Presentation / PDF
+  // 5. Presentation / PDF (3 links)
   // ==========================================
   {
     id: 'link-plus-ai',
@@ -542,7 +478,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 6. Softwares / Tools
+  // 6. Softwares / Tools (5 links)
   // ==========================================
   {
     id: 'link-ninite',
@@ -601,7 +537,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 7. Download / Deleted / Transfer
+  // 7. Download / Deleted / Transfer (5 links)
   // ==========================================
   {
     id: 'link-cobalt',
@@ -660,7 +596,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 8. Edit / Logo / Animation / QR
+  // 8. Edit / Logo / Animation / QR (4 links)
   // ==========================================
   {
     id: 'link-logoai-animated',
@@ -708,7 +644,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 9. Cyber / Security
+  // 9. Cyber / Security (12 links)
   // ==========================================
   {
     id: 'link-virustotal',
@@ -844,7 +780,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 10. Games
+  // 10. Games (1 link)
   // ==========================================
   {
     id: 'link-calcsolver',
@@ -859,7 +795,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 11. GitHub
+  // 11. GitHub (2 links)
   // ==========================================
   {
     id: 'link-koharu',
@@ -885,7 +821,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 12. Lists
+  // 12. Lists (4 links)
   // ==========================================
   {
     id: 'link-everythingmoe',
@@ -930,182 +866,5 @@ export const INITIAL_LINKS = [
     isPinned: true,
     clickCount: 275,
     createdAt: '2026-03-14T13:00:00.000Z',
-  },
-
-  // ==========================================
-  // 13. Development & Frameworks
-  // ==========================================
-  {
-    id: 'link-github-platform',
-    title: 'GitHub',
-    url: 'https://github.com',
-    description: 'Complete developer platform to build, scale, and deliver software with Git, Codespaces, and GitHub Actions.',
-    categoryId: 'development',
-    tags: ['Git', 'Repo', 'CI/CD', 'Open Source'],
-    isPinned: true,
-    clickCount: 260,
-    createdAt: '2026-01-10T08:00:00.000Z',
-  },
-  {
-    id: 'link-nextjs',
-    title: 'Next.js Documentation',
-    url: 'https://nextjs.org/docs',
-    description: 'React framework for the Web featuring App Router, Server Components, and Turbopack.',
-    categoryId: 'development',
-    tags: ['React', 'Next.js', 'SSR', 'Framework'],
-    isPinned: false,
-    clickCount: 120,
-    createdAt: '2026-01-12T11:20:00.000Z',
-  },
-  {
-    id: 'link-tailwindcss',
-    title: 'Tailwind CSS Docs',
-    url: 'https://tailwindcss.com/docs',
-    description: 'Utility-first CSS framework packed with classes that can be composed to build any design directly in markup.',
-    categoryId: 'development',
-    tags: ['CSS', 'Styling', 'Utility', 'Frontend'],
-    isPinned: false,
-    clickCount: 165,
-    createdAt: '2026-01-14T15:00:00.000Z',
-  },
-  {
-    id: 'link-mdn',
-    title: 'MDN Web Docs',
-    url: 'https://developer.mozilla.org',
-    description: 'Authoritative resources and references for HTML, CSS, JavaScript, and Web APIs.',
-    categoryId: 'development',
-    tags: ['Reference', 'JavaScript', 'HTML5', 'Web APIs'],
-    isPinned: false,
-    clickCount: 95,
-    createdAt: '2026-01-18T10:00:00.000Z',
-  },
-  {
-    id: 'link-stackoverflow',
-    title: 'Stack Overflow',
-    url: 'https://stackoverflow.com',
-    description: 'Public platform building the definitive collection of coding questions and answers.',
-    categoryId: 'development',
-    tags: ['Community', 'Debugging', 'Q&A'],
-    isPinned: false,
-    clickCount: 78,
-    createdAt: '2026-01-22T13:45:00.000Z',
-  },
-  {
-    id: 'link-vite',
-    title: 'Vite',
-    url: 'https://vite.dev',
-    description: 'Next generation front-end tooling with lightning fast HMR and optimized Rollup builds.',
-    categoryId: 'development',
-    tags: ['Bundler', 'Build Tool', 'Fast', 'Frontend'],
-    isPinned: false,
-    clickCount: 70,
-    createdAt: '2026-02-02T11:10:00.000Z',
-  },
-
-  // ==========================================
-  // 14. Design & UI Resources
-  // ==========================================
-  {
-    id: 'link-figma',
-    title: 'Figma',
-    url: 'https://www.figma.com',
-    description: 'The collaborative interface design tool for teams to wireframe, prototype, and build design systems.',
-    categoryId: 'design-tools',
-    tags: ['Design', 'UI/UX', 'Prototyping'],
-    isPinned: true,
-    clickCount: 185,
-    createdAt: '2026-01-11T09:30:00.000Z',
-  },
-  {
-    id: 'link-lucide',
-    title: 'Lucide Icons',
-    url: 'https://lucide.dev/icons',
-    description: 'Beautiful & consistent icon toolkit made by the community, fork of Feather Icons.',
-    categoryId: 'design-tools',
-    tags: ['Icons', 'SVG', 'Open Source', 'UI'],
-    isPinned: false,
-    clickCount: 98,
-    createdAt: '2026-01-19T14:20:00.000Z',
-  },
-  {
-    id: 'link-coolors',
-    title: 'Coolors',
-    url: 'https://coolors.co',
-    description: 'Super fast color scheme generator to create, browse, and export harmonious palettes.',
-    categoryId: 'design-tools',
-    tags: ['Colors', 'Palette', 'Inspiration'],
-    isPinned: false,
-    clickCount: 56,
-    createdAt: '2026-01-25T17:00:00.000Z',
-  },
-  {
-    id: 'link-mobbin',
-    title: 'Mobbin',
-    url: 'https://mobbin.com',
-    description: 'World’s largest mobile and web design pattern library for real-world UI inspiration.',
-    categoryId: 'design-tools',
-    tags: ['Inspiration', 'Mobile', 'UI Patterns'],
-    isPinned: false,
-    clickCount: 68,
-    createdAt: '2026-02-03T10:15:00.000Z',
-  },
-  {
-    id: 'link-dribbble',
-    title: 'Dribbble',
-    url: 'https://dribbble.com',
-    description: 'Showcase and discover creative work from the world’s top designers and illustrators.',
-    categoryId: 'design-tools',
-    tags: ['Portfolio', 'Design', 'Creatives'],
-    isPinned: false,
-    clickCount: 46,
-    createdAt: '2026-02-08T18:00:00.000Z',
-  },
-
-  // ==========================================
-  // 15. Cloud, Database & DevOps
-  // ==========================================
-  {
-    id: 'link-supabase',
-    title: 'Supabase',
-    url: 'https://supabase.com',
-    description: 'The open source Firebase alternative with Postgres database, Authentication, and Edge Functions.',
-    categoryId: 'cloud-devops',
-    tags: ['Database', 'Postgres', 'Backend', 'Auth'],
-    isPinned: false,
-    clickCount: 125,
-    createdAt: '2026-01-13T12:00:00.000Z',
-  },
-  {
-    id: 'link-vercel',
-    title: 'Vercel Dashboard',
-    url: 'https://vercel.com',
-    description: 'Deploy web projects with zero configuration, automatic SSL, preview URLs, and global Edge network.',
-    categoryId: 'cloud-devops',
-    tags: ['Hosting', 'Deployment', 'Serverless'],
-    isPinned: false,
-    clickCount: 94,
-    createdAt: '2026-01-17T16:30:00.000Z',
-  },
-  {
-    id: 'link-cloudflare',
-    title: 'Cloudflare',
-    url: 'https://www.cloudflare.com',
-    description: 'Global cloud platform for DNS, DDoS protection, edge workers, and fast CDN caching.',
-    categoryId: 'cloud-devops',
-    tags: ['CDN', 'DNS', 'Security', 'Edge'],
-    isPinned: false,
-    clickCount: 60,
-    createdAt: '2026-01-24T11:45:00.000Z',
-  },
-  {
-    id: 'link-docker',
-    title: 'Docker Hub',
-    url: 'https://hub.docker.com',
-    description: 'Container image library and collaborative registry for developers and enterprise teams.',
-    categoryId: 'cloud-devops',
-    tags: ['Docker', 'Containers', 'DevOps'],
-    isPinned: false,
-    clickCount: 48,
-    createdAt: '2026-02-04T15:20:00.000Z',
   },
 ];

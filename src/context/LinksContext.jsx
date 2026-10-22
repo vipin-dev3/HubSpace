@@ -4,55 +4,47 @@ import { INITIAL_CATEGORIES, INITIAL_LINKS } from '../data/linksData';
 
 const LinksContext = createContext();
 
-const CURRENT_DATA_VERSION = 'v2_2026_10_22';
+const CURRENT_DATA_VERSION = 'v4_clean_curated_only';
+
+function syncStorageWithInitialData() {
+  try {
+    const savedVersion = localStorage.getItem('hubspace_data_version');
+    const savedLinks = localStorage.getItem('hubspace_links');
+
+    // Force purge if version mismatch or if old legacy links (chatgpt, claude, etc.) are present
+    const needsReset =
+      savedVersion !== CURRENT_DATA_VERSION ||
+      !savedLinks ||
+      savedLinks.includes('chatgpt.com') ||
+      savedLinks.includes('claude.ai') ||
+      savedLinks.includes('link-1') ||
+      savedLinks.includes('link-6');
+
+    if (needsReset) {
+      localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
+      localStorage.setItem('hubspace_categories', JSON.stringify(INITIAL_CATEGORIES));
+      localStorage.setItem('hubspace_links', JSON.stringify(INITIAL_LINKS));
+      return {
+        categories: INITIAL_CATEGORIES,
+        links: INITIAL_LINKS,
+      };
+    }
+
+    const categories = JSON.parse(localStorage.getItem('hubspace_categories')) || INITIAL_CATEGORIES;
+    const links = JSON.parse(savedLinks) || INITIAL_LINKS;
+    return { categories, links };
+  } catch {
+    return {
+      categories: INITIAL_CATEGORIES,
+      links: INITIAL_LINKS,
+    };
+  }
+}
 
 export function LinksProvider({ children }) {
   // --- Persistent State ---
-  const [categories, setCategories] = useState(() => {
-    try {
-      const savedVersion = localStorage.getItem('hubspace_data_version');
-      if (savedVersion !== CURRENT_DATA_VERSION) {
-        localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
-        localStorage.setItem('hubspace_categories', JSON.stringify(INITIAL_CATEGORIES));
-        return INITIAL_CATEGORIES;
-      }
-      const saved = localStorage.getItem('hubspace_categories');
-      return saved ? JSON.parse(saved) : INITIAL_CATEGORIES;
-    } catch {
-      return INITIAL_CATEGORIES;
-    }
-  });
-
-  const [links, setLinks] = useState(() => {
-    try {
-      const savedVersion = localStorage.getItem('hubspace_data_version');
-      if (savedVersion !== CURRENT_DATA_VERSION) {
-        localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
-        const saved = localStorage.getItem('hubspace_links');
-        if (saved) {
-          try {
-            const parsed = JSON.parse(saved);
-            const initialIds = new Set(INITIAL_LINKS.map((l) => l.id));
-            const customUserLinks = parsed.filter(
-              (l) => !initialIds.has(l.id) && l.id && !l.id.startsWith('link-')
-            );
-            const combined = [...INITIAL_LINKS, ...customUserLinks];
-            localStorage.setItem('hubspace_links', JSON.stringify(combined));
-            return combined;
-          } catch {
-            localStorage.setItem('hubspace_links', JSON.stringify(INITIAL_LINKS));
-            return INITIAL_LINKS;
-          }
-        }
-        localStorage.setItem('hubspace_links', JSON.stringify(INITIAL_LINKS));
-        return INITIAL_LINKS;
-      }
-      const saved = localStorage.getItem('hubspace_links');
-      return saved ? JSON.parse(saved) : INITIAL_LINKS;
-    } catch {
-      return INITIAL_LINKS;
-    }
-  });
+  const [categories, setCategories] = useState(() => syncStorageWithInitialData().categories);
+  const [links, setLinks] = useState(() => syncStorageWithInitialData().links);
 
   const [viewMode, setViewMode] = useState(() => {
     try {
