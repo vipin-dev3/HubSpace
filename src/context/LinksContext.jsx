@@ -4,7 +4,7 @@ import { INITIAL_CATEGORIES, INITIAL_LINKS } from '../data/linksData';
 
 const LinksContext = createContext();
 
-const CURRENT_DATA_VERSION = 'v4_clean_curated_only';
+const CURRENT_DATA_VERSION = 'v5_typing_and_removebg';
 
 function syncStorageWithInitialData() {
   try {

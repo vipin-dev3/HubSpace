@@ -124,6 +124,16 @@ export const INITIAL_CATEGORIES = [
     badgeClass: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20 dark:text-indigo-300',
     glowColor: 'rgba(99, 102, 241, 0.25)',
   },
+  {
+    id: 'typing',
+    name: 'Typing',
+    description: 'Touch typing practice, speed tests, keyboard mastery, and interactive lessons.',
+    icon: 'Keyboard',
+    color: 'blue',
+    gradient: 'from-blue-500/20 to-indigo-500/20',
+    badgeClass: 'bg-blue-500/10 text-blue-400 border-blue-500/20 dark:text-blue-300',
+    glowColor: 'rgba(59, 130, 246, 0.25)',
+  },
 ];
 
 export const INITIAL_LINKS = [
@@ -642,6 +652,17 @@ export const INITIAL_LINKS = [
     clickCount: 130,
     createdAt: '2026-02-23T13:00:00.000Z',
   },
+  {
+    id: 'link-remove-bg',
+    title: 'Remove.bg',
+    url: 'https://www.remove.bg/',
+    description: '100% automated AI background remover to delete photo backgrounds instantly with stunning edge detail.',
+    categoryId: 'edit-logo-animation-qr',
+    tags: ['Background Remover', 'Photo Editing', 'AI', 'Graphic Design'],
+    isPinned: false,
+    clickCount: 155,
+    createdAt: '2026-02-23T15:00:00.000Z',
+  },
 
   // ==========================================
   // 9. Cyber / Security (12 links)
@@ -866,5 +887,42 @@ export const INITIAL_LINKS = [
     isPinned: true,
     clickCount: 275,
     createdAt: '2026-03-14T13:00:00.000Z',
+  },
+
+  // ==========================================
+  // 13. Typing (3 links)
+  // ==========================================
+  {
+    id: 'link-typingclub',
+    title: 'TypingClub (EdClub)',
+    url: 'https://www.edclub.com/student/course/3',
+    description: 'Free, gamified touch typing course with hundreds of interactive lessons, posture guides, and finger placement drills.',
+    categoryId: 'typing',
+    tags: ['Typing', 'Education', 'Lessons', 'Keyboard'],
+    isPinned: false,
+    clickCount: 110,
+    createdAt: '2026-03-15T10:00:00.000Z',
+  },
+  {
+    id: 'link-monkeytype',
+    title: 'Monkeytype',
+    url: 'https://monkeytype.com/',
+    description: 'Customizable, minimalistic typing test platform featuring multiple modes, custom wordlists, detailed WPM/accuracy analytics, and theme presets.',
+    categoryId: 'typing',
+    tags: ['Typing', 'Speed Test', 'WPM', 'Minimalist'],
+    isPinned: false,
+    clickCount: 190,
+    createdAt: '2026-03-15T11:00:00.000Z',
+  },
+  {
+    id: 'link-keybr',
+    title: 'Keybr',
+    url: 'https://www.keybr.com/',
+    description: 'Smart touch typing tutor that uses adaptive learning algorithms to generate phonetic pseudo-words and correct your weakest keys.',
+    categoryId: 'typing',
+    tags: ['Typing', 'Adaptive', 'Tutor', 'Keyboard'],
+    isPinned: false,
+    clickCount: 95,
+    createdAt: '2026-03-15T12:00:00.000Z',
   },
 ];

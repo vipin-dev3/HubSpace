@@ -35,6 +35,7 @@ import {
   ListFilter,
   GraduationCap,
   Boxes,
+  Keyboard,
 } from 'lucide-react';
 
 const ICON_MAP = {
@@ -73,6 +74,7 @@ const ICON_MAP = {
   ListFilter,
   GraduationCap,
   Boxes,
+  Keyboard,
 };
 
 export default function CategoryIcon({ name, className = 'w-5 h-5' }) {
