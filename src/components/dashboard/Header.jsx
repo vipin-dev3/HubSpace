@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
-  Search,
   Plus,
   Moon,
   Sun,
@@ -8,34 +7,22 @@ import {
   Grid3X3,
   List,
   DownloadCloud,
-  X,
   Compass,
   LogOut,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
-import { useKeyboardShortcuts } from '../../hooks/useKeyboardShortcuts';
 
 export default function Header() {
   const { logout } = useAuth();
   const {
-    searchQuery,
-    setSearchQuery,
     viewMode,
     setViewMode,
     setModalState,
   } = useLinks();
 
   const { toggleTheme, isDark } = useTheme();
-  const searchInputRef = useRef(null);
-
-  // Hook up keyboard shortcuts
-  useKeyboardShortcuts({
-    onSearchFocus: () => searchInputRef.current?.focus(),
-    onAddLink: () => setModalState((prev) => ({ ...prev, addEditOpen: true, editingLink: null })),
-    onClearSearch: () => setSearchQuery(''),
-  });
 
   return (
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-white/80 dark:bg-[#0a0d14]/80 border-b border-slate-200/80 dark:border-white/10 transition-colors">
@@ -65,44 +52,10 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Search Bar - Center */}
-          <div className="flex-1 max-w-xl mx-auto">
-            <div className="relative group">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors">
-                <Search className="w-4 h-4" />
-              </div>
-
-              <input
-                ref={searchInputRef}
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search links, tags, URLs, categories... (Press '/' to focus)"
-                className="w-full pl-10 pr-20 py-2 sm:py-2.5 text-xs sm:text-sm rounded-xl bg-slate-100/80 dark:bg-[#121624] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/50 transition-all shadow-inner"
-              />
-
-              <div className="absolute inset-y-0 right-0 pr-2.5 flex items-center gap-1.5">
-                {searchQuery ? (
-                  <button
-                    onClick={() => setSearchQuery('')}
-                    className="p-1 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800"
-                    title="Clear search"
-                  >
-                    <X className="w-3.5 h-3.5" />
-                  </button>
-                ) : (
-                  <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono text-slate-400 dark:text-slate-500 bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded shadow-sm">
-                    /
-                  </kbd>
-                )}
-              </div>
-            </div>
-          </div>
-
           {/* Right Action Tools */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             {/* View Switcher Segmented Control */}
-            <div className="hidden lg:flex items-center p-1 rounded-xl bg-slate-100 dark:bg-[#121624] border border-slate-200/80 dark:border-white/10">
+            <div className="flex items-center p-1 rounded-xl bg-slate-100 dark:bg-[#121624] border border-slate-200/80 dark:border-white/10">
               <button
                 onClick={() => setViewMode('detailed')}
                 className={`p-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${

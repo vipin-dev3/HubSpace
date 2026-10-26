@@ -3,7 +3,6 @@ import {
   ExternalLink,
   Copy,
   Check,
-  Star,
   Edit2,
   Trash2,
   MousePointerClick,
@@ -13,7 +12,7 @@ import FaviconImage from '../common/FaviconImage';
 import { extractDomain } from '../../utils/urlHelper';
 
 export default function LinkCardDetailed({ link }) {
-  const { togglePin, incrementClick, setModalState, setSelectedTag, addToast } = useLinks();
+  const { incrementClick, setModalState, setSelectedTag, addToast } = useLinks();
   const [copied, setCopied] = useState(false);
 
   const domain = extractDomain(link.url);
@@ -78,24 +77,8 @@ export default function LinkCardDetailed({ link }) {
             </div>
           </div>
 
-          {/* Quick Actions (Pin & Copy) */}
+          {/* Quick Copy Action */}
           <div className="flex items-center gap-1 shrink-0">
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                togglePin(link.id);
-              }}
-              className={`p-1.5 rounded-lg transition-colors ${
-                link.isPinned
-                  ? 'text-amber-400 hover:bg-amber-500/10'
-                  : 'text-slate-400 hover:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
-              title={link.isPinned ? 'Remove from Quick Dock' : 'Pin to Quick Dock'}
-              aria-label="Toggle pin"
-            >
-              <Star className={`w-4 h-4 ${link.isPinned ? 'fill-amber-400' : ''}`} />
-            </button>
-
             <button
               onClick={handleCopy}
               className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"

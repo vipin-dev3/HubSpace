@@ -288,16 +288,31 @@ export function LinksProvider({ children }) {
   const filteredLinks = useMemo(() => {
     let result = enrichedLinks;
 
-    // 1. Search Query Filter
+    // 1. Enhanced Search Query Filter (Exact substring match + Fuse fuzzy search)
     if (searchQuery.trim()) {
-      const searchResults = fuse.search(searchQuery.trim());
-      result = searchResults.map((r) => r.item);
+      const q = searchQuery.trim().toLowerCase();
+
+      // Priority 1: Exact matches in title, url, tags, description, category
+      const exactMatches = enrichedLinks.filter((l) => {
+        const inTitle = l.title?.toLowerCase().includes(q);
+        const inUrl = l.url?.toLowerCase().includes(q);
+        const inDesc = l.description?.toLowerCase().includes(q);
+        const inTags = l.tags?.some((t) => t.toLowerCase().includes(q));
+        const inCat = l.categoryName?.toLowerCase().includes(q);
+        return inTitle || inUrl || inDesc || inTags || inCat;
+      });
+
+      // Priority 2: Fuzzy matches via Fuse
+      const fuseResults = fuse.search(searchQuery.trim()).map((r) => r.item);
+
+      // Merge preserving exact matches first, followed by unique fuzzy results
+      const exactIds = new Set(exactMatches.map((l) => l.id));
+      const additionalFuzzy = fuseResults.filter((l) => !exactIds.has(l.id));
+      result = [...exactMatches, ...additionalFuzzy];
     }
 
     // 2. Category Filter
-    if (selectedCategory === 'favorites') {
-      result = result.filter((link) => link.isPinned);
-    } else if (selectedCategory !== 'all') {
+    if (selectedCategory !== 'all') {
       result = result.filter((link) => link.categoryId === selectedCategory);
     }
 

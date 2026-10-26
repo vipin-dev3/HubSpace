@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ExternalLink, Copy, Check, Star, Edit2, Trash2 } from 'lucide-react';
+import { ExternalLink, Copy, Check, Edit2, Trash2 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import FaviconImage from '../common/FaviconImage';
 import { extractDomain } from '../../utils/urlHelper';
 
 export default function LinkCardCompact({ link }) {
-  const { togglePin, incrementClick, setModalState, addToast } = useLinks();
+  const { incrementClick, setModalState, addToast } = useLinks();
   const [copied, setCopied] = useState(false);
 
   const domain = extractDomain(link.url);
@@ -61,19 +61,6 @@ export default function LinkCardCompact({ link }) {
 
       {/* Action buttons */}
       <div className="flex items-center gap-1 shrink-0">
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            togglePin(link.id);
-          }}
-          className={`p-1 rounded-md transition-colors ${
-            link.isPinned ? 'text-amber-400' : 'text-slate-400 hover:text-amber-400'
-          }`}
-          title="Toggle Pin"
-        >
-          <Star className={`w-3.5 h-3.5 ${link.isPinned ? 'fill-amber-400' : ''}`} />
-        </button>
-
         <button
           onClick={handleCopy}
           className="p-1 rounded-md text-slate-400 hover:text-slate-200 transition-colors"

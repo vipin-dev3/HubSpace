@@ -16,7 +16,7 @@ export default function EmptyState() {
       ...prev,
       addEditOpen: true,
       editingLink: null,
-      preselectedCategory: selectedCategory !== 'all' && selectedCategory !== 'favorites' ? selectedCategory : null,
+      preselectedCategory: selectedCategory !== 'all' ? selectedCategory : null,
     }));
   };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Globe, Star, Plus } from 'lucide-react';
+import { X, Globe, Plus } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import { formatUrl, isValidUrl, extractDomain } from '../../utils/urlHelper';
 import FaviconImage from '../common/FaviconImage';
@@ -17,7 +17,6 @@ export default function AddEditLinkModal() {
   const [categoryId, setCategoryId] = useState('');
   const [tags, setTags] = useState([]);
   const [newTagInput, setNewTagInput] = useState('');
-  const [isPinned, setIsPinned] = useState(false);
   const [urlError, setUrlError] = useState('');
 
   // Populate or reset form whenever modal opens or editingLink changes
@@ -29,14 +28,12 @@ export default function AddEditLinkModal() {
         setDescription(editingLink.description || '');
         setCategoryId(editingLink.categoryId || categories[0]?.id || 'ai-tools');
         setTags(editingLink.tags || []);
-        setIsPinned(Boolean(editingLink.isPinned));
       } else {
         setTitle('');
         setUrl('');
         setDescription('');
         setCategoryId(modalState.preselectedCategory || categories[0]?.id || 'ai-tools');
         setTags([]);
-        setIsPinned(false);
       }
       setUrlError('');
       setNewTagInput('');
@@ -92,7 +89,6 @@ export default function AddEditLinkModal() {
         description: description.trim(),
         categoryId,
         tags,
-        isPinned,
       });
     } else {
       addLink({
@@ -101,7 +97,6 @@ export default function AddEditLinkModal() {
         description: description.trim(),
         categoryId,
         tags,
-        isPinned,
       });
     }
 
@@ -272,24 +267,6 @@ export default function AddEditLinkModal() {
                   ))}
                 </div>
               )}
-            </div>
-
-            {/* Favorite / Pin Checkbox */}
-            <div className="flex items-center gap-2.5 pt-2">
-              <input
-                type="checkbox"
-                id="isPinned"
-                checked={isPinned}
-                onChange={(e) => setIsPinned(e.target.checked)}
-                className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300 dark:border-slate-700 dark:bg-slate-800 cursor-pointer"
-              />
-              <label
-                htmlFor="isPinned"
-                className="text-xs font-medium text-slate-700 dark:text-slate-300 flex items-center gap-1.5 cursor-pointer"
-              >
-                <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400/30" />
-                <span>Pin to Quick Dock (Top Favorites)</span>
-              </label>
             </div>
 
             {/* Modal Actions */}

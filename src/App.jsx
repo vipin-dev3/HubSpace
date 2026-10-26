@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import Header from './components/dashboard/Header';
-import QuickDock from './components/dashboard/QuickDock';
 import StatsOverview from './components/dashboard/StatsOverview';
 import FilterBar from './components/dashboard/FilterBar';
 import EmptyState from './components/dashboard/EmptyState';
@@ -37,20 +36,6 @@ export default function App() {
 
   // Categories to display based on selected filter
   const visibleCategories = useMemo(() => {
-    if (selectedCategory === 'favorites') {
-      return [
-        {
-          id: 'favorites',
-          name: 'Favorite & Pinned Bookmarks',
-          description: 'Your starred quick-access bookmarks.',
-          icon: 'Star',
-          color: 'amber',
-          badgeClass: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
-          glowColor: 'rgba(245, 158, 11, 0.3)',
-        },
-      ];
-    }
-
     if (selectedCategory !== 'all') {
       return categories.filter((cat) => cat.id === selectedCategory);
     }
@@ -80,21 +65,11 @@ export default function App() {
         {/* Top Stats Overview */}
         <StatsOverview />
 
-        {/* Pinned Links Quick Dock */}
-        <QuickDock />
-
-        {/* Filter Navigation & Search Bar Pills */}
+        {/* Search Bar & Category Dropdown Section */}
         <FilterBar />
 
         {/* Categorized Sections */}
-        {filteredLinks.length === 0 ? (
-          <EmptyState />
-        ) : selectedCategory === 'favorites' ? (
-          <CategorySection
-            category={visibleCategories[0]}
-            links={filteredLinks}
-          />
-        ) : visibleCategories.length === 0 ? (
+        {filteredLinks.length === 0 || visibleCategories.length === 0 ? (
           <EmptyState />
         ) : (
           visibleCategories.map((category) => (
