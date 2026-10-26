@@ -148,7 +148,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'LLM', 'Benchmark', 'LMSYS'],
     isPinned: true,
-    clickCount: 185,
+    clickCount: 0,
     createdAt: '2026-01-10T10:00:00.000Z',
   },
   {
@@ -159,7 +159,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'Design', 'Generative UI', 'Benchmark'],
     isPinned: false,
-    clickCount: 45,
+    clickCount: 0,
     createdAt: '2026-01-11T11:00:00.000Z',
   },
   {
@@ -170,7 +170,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'Tools', 'Directory', 'Productivity'],
     isPinned: false,
-    clickCount: 38,
+    clickCount: 0,
     createdAt: '2026-01-12T12:00:00.000Z',
   },
   {
@@ -181,7 +181,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'Machine Learning', 'Open Source', 'Models'],
     isPinned: true,
-    clickCount: 220,
+    clickCount: 0,
     createdAt: '2026-01-13T13:00:00.000Z',
   },
   {
@@ -192,7 +192,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'Assistant', 'Generative AI', 'Productivity'],
     isPinned: false,
-    clickCount: 32,
+    clickCount: 0,
     createdAt: '2026-01-14T14:00:00.000Z',
   },
   {
@@ -203,7 +203,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'Generators', 'Free', 'Creative'],
     isPinned: false,
-    clickCount: 88,
+    clickCount: 0,
     createdAt: '2026-01-15T15:00:00.000Z',
   },
   {
@@ -214,7 +214,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'API', 'Developer', 'Inference'],
     isPinned: false,
-    clickCount: 42,
+    clickCount: 0,
     createdAt: '2026-01-16T16:00:00.000Z',
   },
   {
@@ -225,7 +225,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'NVIDIA', 'LLM', 'Cloud'],
     isPinned: true,
-    clickCount: 140,
+    clickCount: 0,
     createdAt: '2026-01-17T17:00:00.000Z',
   },
   {
@@ -236,7 +236,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'API', 'LLM', 'Gateway'],
     isPinned: true,
-    clickCount: 160,
+    clickCount: 0,
     createdAt: '2026-01-18T18:00:00.000Z',
   },
   {
@@ -247,7 +247,7 @@ export const INITIAL_LINKS = [
     categoryId: 'ai-tools',
     tags: ['AI', 'Productivity', 'Workflow', 'Developer'],
     isPinned: false,
-    clickCount: 35,
+    clickCount: 0,
     createdAt: '2026-01-19T19:00:00.000Z',
   },
 
@@ -262,7 +262,7 @@ export const INITIAL_LINKS = [
     categoryId: 'movies-anime',
     tags: ['Movies', 'TV Shows', 'Streaming', 'Entertainment'],
     isPinned: false,
-    clickCount: 78,
+    clickCount: 0,
     createdAt: '2026-01-20T10:00:00.000Z',
   },
   {
@@ -273,7 +273,7 @@ export const INITIAL_LINKS = [
     categoryId: 'movies-anime',
     tags: ['Anime', 'Streaming', 'Series', 'HD'],
     isPinned: true,
-    clickCount: 165,
+    clickCount: 0,
     createdAt: '2026-01-21T11:00:00.000Z',
   },
 
@@ -288,7 +288,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['Courses', 'Education', 'Free', 'Certificates'],
     isPinned: false,
-    clickCount: 62,
+    clickCount: 0,
     createdAt: '2026-01-22T10:00:00.000Z',
   },
   {
@@ -299,7 +299,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['Education', 'AI', 'Study', 'Flashcards'],
     isPinned: false,
-    clickCount: 54,
+    clickCount: 0,
     createdAt: '2026-01-23T11:00:00.000Z',
   },
   {
@@ -310,7 +310,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['Essay', 'Writing', 'Grammar', 'Academic'],
     isPinned: false,
-    clickCount: 79,
+    clickCount: 0,
     createdAt: '2026-01-24T12:00:00.000Z',
   },
   {
@@ -321,7 +321,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['Courses', 'University', 'Certifications', 'Education'],
     isPinned: true,
-    clickCount: 175,
+    clickCount: 0,
     createdAt: '2026-01-25T13:00:00.000Z',
   },
   {
@@ -332,7 +332,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['Math', 'Science', 'Computation', 'Calculator'],
     isPinned: true,
-    clickCount: 195,
+    clickCount: 0,
     createdAt: '2026-01-26T14:00:00.000Z',
   },
   {
@@ -343,7 +343,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['Coding', 'Programming', 'Interactive', 'Learn'],
     isPinned: false,
-    clickCount: 92,
+    clickCount: 0,
     createdAt: '2026-01-27T15:00:00.000Z',
   },
   {
@@ -354,7 +354,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['AI Detector', 'Writing', 'Education', 'Verification'],
     isPinned: false,
-    clickCount: 110,
+    clickCount: 0,
     createdAt: '2026-01-28T16:00:00.000Z',
   },
   {
@@ -365,7 +365,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['Worksheets', 'Kids', 'Printable', 'Education'],
     isPinned: false,
-    clickCount: 38,
+    clickCount: 0,
     createdAt: '2026-01-29T17:00:00.000Z',
   },
   {
@@ -376,7 +376,7 @@ export const INITIAL_LINKS = [
     categoryId: 'education-coding',
     tags: ['Govt', 'Certifications', 'Skills', 'Tech'],
     isPinned: false,
-    clickCount: 49,
+    clickCount: 0,
     createdAt: '2026-01-30T18:00:00.000Z',
   },
 
@@ -391,7 +391,7 @@ export const INITIAL_LINKS = [
     categoryId: 'books',
     tags: ['Books', 'Library', 'Open Source', 'Ebooks'],
     isPinned: true,
-    clickCount: 185,
+    clickCount: 0,
     createdAt: '2026-02-01T10:00:00.000Z',
   },
   {
@@ -402,7 +402,7 @@ export const INITIAL_LINKS = [
     categoryId: 'books',
     tags: ['Books', 'Literature', 'Public Domain', 'Free'],
     isPinned: false,
-    clickCount: 105,
+    clickCount: 0,
     createdAt: '2026-02-02T11:00:00.000Z',
   },
   {
@@ -413,7 +413,7 @@ export const INITIAL_LINKS = [
     categoryId: 'books',
     tags: ['Books', 'Academic', 'Research', 'Textbooks'],
     isPinned: true,
-    clickCount: 235,
+    clickCount: 0,
     createdAt: '2026-02-03T12:00:00.000Z',
   },
   {
@@ -424,7 +424,7 @@ export const INITIAL_LINKS = [
     categoryId: 'books',
     tags: ['Books', 'Ebooks', 'Library', 'Search'],
     isPinned: true,
-    clickCount: 215,
+    clickCount: 0,
     createdAt: '2026-02-04T13:00:00.000Z',
   },
   {
@@ -435,7 +435,7 @@ export const INITIAL_LINKS = [
     categoryId: 'books',
     tags: ['Books', 'Library', 'Reading', 'Free'],
     isPinned: false,
-    clickCount: 52,
+    clickCount: 0,
     createdAt: '2026-02-05T14:00:00.000Z',
   },
   {
@@ -446,7 +446,7 @@ export const INITIAL_LINKS = [
     categoryId: 'books',
     tags: ['Books', 'PDF', 'Epub', 'Download'],
     isPinned: true,
-    clickCount: 195,
+    clickCount: 0,
     createdAt: '2026-02-06T15:00:00.000Z',
   },
 
@@ -461,7 +461,7 @@ export const INITIAL_LINKS = [
     categoryId: 'presentation-pdf',
     tags: ['Presentation', 'AI', 'Google Slides', 'PowerPoint'],
     isPinned: false,
-    clickCount: 76,
+    clickCount: 0,
     createdAt: '2026-02-07T10:00:00.000Z',
   },
   {
@@ -472,7 +472,7 @@ export const INITIAL_LINKS = [
     categoryId: 'presentation-pdf',
     tags: ['Presentation', 'AI', 'Docs', 'Webpage'],
     isPinned: true,
-    clickCount: 165,
+    clickCount: 0,
     createdAt: '2026-02-08T11:00:00.000Z',
   },
   {
@@ -483,7 +483,7 @@ export const INITIAL_LINKS = [
     categoryId: 'presentation-pdf',
     tags: ['PDF', 'Flashcards', 'Study', 'Recall'],
     isPinned: false,
-    clickCount: 44,
+    clickCount: 0,
     createdAt: '2026-02-09T12:00:00.000Z',
   },
 
@@ -498,7 +498,7 @@ export const INITIAL_LINKS = [
     categoryId: 'softwares-tools',
     tags: ['Software', 'Windows', 'Installer', 'Automation'],
     isPinned: true,
-    clickCount: 180,
+    clickCount: 0,
     createdAt: '2026-02-10T10:00:00.000Z',
   },
   {
@@ -509,7 +509,7 @@ export const INITIAL_LINKS = [
     categoryId: 'softwares-tools',
     tags: ['Directory', 'Curated', 'Resources', 'Tools'],
     isPinned: false,
-    clickCount: 65,
+    clickCount: 0,
     createdAt: '2026-02-11T11:00:00.000Z',
   },
   {
@@ -520,7 +520,7 @@ export const INITIAL_LINKS = [
     categoryId: 'softwares-tools',
     tags: ['Branding', 'Startup', 'Name Generator', 'AI'],
     isPinned: false,
-    clickCount: 104,
+    clickCount: 0,
     createdAt: '2026-02-12T12:00:00.000Z',
   },
   {
@@ -531,7 +531,7 @@ export const INITIAL_LINKS = [
     categoryId: 'softwares-tools',
     tags: ['Web Apps', 'Tools', 'Design', 'Utility'],
     isPinned: false,
-    clickCount: 48,
+    clickCount: 0,
     createdAt: '2026-02-13T13:00:00.000Z',
   },
   {
@@ -542,7 +542,7 @@ export const INITIAL_LINKS = [
     categoryId: 'softwares-tools',
     tags: ['Privacy', 'Cleanup', 'Social Media', 'Security'],
     isPinned: true,
-    clickCount: 96,
+    clickCount: 0,
     createdAt: '2026-02-14T14:00:00.000Z',
   },
 
@@ -557,7 +557,7 @@ export const INITIAL_LINKS = [
     categoryId: 'download-transfer',
     tags: ['Downloader', 'Media', 'Ad-Free', 'Video'],
     isPinned: true,
-    clickCount: 250,
+    clickCount: 0,
     createdAt: '2026-02-15T10:00:00.000Z',
   },
   {
@@ -568,7 +568,7 @@ export const INITIAL_LINKS = [
     categoryId: 'download-transfer',
     tags: ['File Transfer', 'P2P', 'WebRTC', 'Fast'],
     isPinned: false,
-    clickCount: 95,
+    clickCount: 0,
     createdAt: '2026-02-16T11:00:00.000Z',
   },
   {
@@ -579,7 +579,7 @@ export const INITIAL_LINKS = [
     categoryId: 'download-transfer',
     tags: ['Storage', 'Vault', 'Media', 'Inspect'],
     isPinned: false,
-    clickCount: 41,
+    clickCount: 0,
     createdAt: '2026-02-17T12:00:00.000Z',
   },
   {
@@ -590,7 +590,7 @@ export const INITIAL_LINKS = [
     categoryId: 'download-transfer',
     tags: ['OSINT', 'Deleted', 'Reddit', 'Archive'],
     isPinned: false,
-    clickCount: 82,
+    clickCount: 0,
     createdAt: '2026-02-18T13:00:00.000Z',
   },
   {
@@ -601,7 +601,7 @@ export const INITIAL_LINKS = [
     categoryId: 'download-transfer',
     tags: ['File Transfer', 'AirDrop', 'P2P', 'Local Network'],
     isPinned: true,
-    clickCount: 145,
+    clickCount: 0,
     createdAt: '2026-02-19T14:00:00.000Z',
   },
 
@@ -616,7 +616,7 @@ export const INITIAL_LINKS = [
     categoryId: 'edit-logo-animation-qr',
     tags: ['Logo', 'Animation', 'Branding', 'Motion'],
     isPinned: false,
-    clickCount: 68,
+    clickCount: 0,
     createdAt: '2026-02-20T10:00:00.000Z',
   },
   {
@@ -627,7 +627,7 @@ export const INITIAL_LINKS = [
     categoryId: 'edit-logo-animation-qr',
     tags: ['Video', 'Editing', 'Text Cut', 'AI'],
     isPinned: false,
-    clickCount: 49,
+    clickCount: 0,
     createdAt: '2026-02-21T11:00:00.000Z',
   },
   {
@@ -638,7 +638,7 @@ export const INITIAL_LINKS = [
     categoryId: 'edit-logo-animation-qr',
     tags: ['QR Code', 'Bio Link', 'Dynamic QR', 'Marketing'],
     isPinned: false,
-    clickCount: 57,
+    clickCount: 0,
     createdAt: '2026-02-22T12:00:00.000Z',
   },
   {
@@ -649,7 +649,7 @@ export const INITIAL_LINKS = [
     categoryId: 'edit-logo-animation-qr',
     tags: ['Motion', 'Animation', 'Figma', 'Video'],
     isPinned: true,
-    clickCount: 130,
+    clickCount: 0,
     createdAt: '2026-02-23T13:00:00.000Z',
   },
   {
@@ -660,7 +660,7 @@ export const INITIAL_LINKS = [
     categoryId: 'edit-logo-animation-qr',
     tags: ['Background Remover', 'Photo Editing', 'AI', 'Graphic Design'],
     isPinned: false,
-    clickCount: 155,
+    clickCount: 0,
     createdAt: '2026-02-23T15:00:00.000Z',
   },
 
@@ -675,7 +675,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['Security', 'Antivirus', 'Scanner', 'Threat Intel'],
     isPinned: true,
-    clickCount: 210,
+    clickCount: 0,
     createdAt: '2026-02-24T10:00:00.000Z',
   },
   {
@@ -686,7 +686,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['OSINT', 'Geolocation', 'AI', 'Investigation'],
     isPinned: true,
-    clickCount: 165,
+    clickCount: 0,
     createdAt: '2026-02-25T11:00:00.000Z',
   },
   {
@@ -697,7 +697,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['SMS', 'Privacy', 'Disposable', 'Verification'],
     isPinned: false,
-    clickCount: 112,
+    clickCount: 0,
     createdAt: '2026-02-26T12:00:00.000Z',
   },
   {
@@ -708,7 +708,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['SMS', 'Disposable Number', 'Privacy'],
     isPinned: false,
-    clickCount: 94,
+    clickCount: 0,
     createdAt: '2026-02-27T13:00:00.000Z',
   },
   {
@@ -719,7 +719,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['Bypass', 'Paywall', 'Reading', 'Archive'],
     isPinned: true,
-    clickCount: 195,
+    clickCount: 0,
     createdAt: '2026-02-28T14:00:00.000Z',
   },
   {
@@ -730,7 +730,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['OSINT', 'Lookup', 'Investigation', 'Security'],
     isPinned: false,
-    clickCount: 75,
+    clickCount: 0,
     createdAt: '2026-03-01T10:00:00.000Z',
   },
   {
@@ -741,7 +741,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['OSINT', 'IoT', 'Network', 'Cybersecurity'],
     isPinned: true,
-    clickCount: 175,
+    clickCount: 0,
     createdAt: '2026-03-02T11:00:00.000Z',
   },
   {
@@ -752,7 +752,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['Breach', 'Credentials', 'Passwords', 'Security'],
     isPinned: true,
-    clickCount: 125,
+    clickCount: 0,
     createdAt: '2026-03-03T12:00:00.000Z',
   },
   {
@@ -763,7 +763,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['Hashes', 'Decryption', 'Cryptography', 'Security'],
     isPinned: false,
-    clickCount: 108,
+    clickCount: 0,
     createdAt: '2026-03-04T13:00:00.000Z',
   },
   {
@@ -774,7 +774,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['Privacy', 'Open Source', 'Security', 'Surveillance'],
     isPinned: false,
-    clickCount: 86,
+    clickCount: 0,
     createdAt: '2026-03-05T14:00:00.000Z',
   },
   {
@@ -785,7 +785,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['IP', 'Tracking', 'Analytics', 'Network'],
     isPinned: false,
-    clickCount: 92,
+    clickCount: 0,
     createdAt: '2026-03-06T15:00:00.000Z',
   },
   {
@@ -796,7 +796,7 @@ export const INITIAL_LINKS = [
     categoryId: 'cyber-security',
     tags: ['OSINT', 'Email', 'Investigation', 'Profiles'],
     isPinned: false,
-    clickCount: 81,
+    clickCount: 0,
     createdAt: '2026-03-07T16:00:00.000Z',
   },
 
@@ -811,7 +811,7 @@ export const INITIAL_LINKS = [
     categoryId: 'games',
     tags: ['Games', 'Calculator', 'Solver', 'Puzzle'],
     isPinned: false,
-    clickCount: 46,
+    clickCount: 0,
     createdAt: '2026-03-08T10:00:00.000Z',
   },
 
@@ -826,7 +826,7 @@ export const INITIAL_LINKS = [
     categoryId: 'github',
     tags: ['GitHub', 'Rust', 'Manga', 'Translation', 'OCR'],
     isPinned: true,
-    clickCount: 145,
+    clickCount: 0,
     createdAt: '2026-03-09T10:00:00.000Z',
   },
   {
@@ -837,7 +837,7 @@ export const INITIAL_LINKS = [
     categoryId: 'github',
     tags: ['GitHub', 'OSINT', 'Python', 'Investigation', 'Security'],
     isPinned: true,
-    clickCount: 230,
+    clickCount: 0,
     createdAt: '2026-03-10T11:00:00.000Z',
   },
 
@@ -852,7 +852,7 @@ export const INITIAL_LINKS = [
     categoryId: 'lists',
     tags: ['Directory', 'Anime', 'Manga', 'Resources'],
     isPinned: true,
-    clickCount: 155,
+    clickCount: 0,
     createdAt: '2026-03-11T10:00:00.000Z',
   },
   {
@@ -863,7 +863,7 @@ export const INITIAL_LINKS = [
     categoryId: 'lists',
     tags: ['OSINT', 'Directory', 'Investigation', 'Dashboard'],
     isPinned: true,
-    clickCount: 180,
+    clickCount: 0,
     createdAt: '2026-03-12T11:00:00.000Z',
   },
   {
@@ -874,7 +874,7 @@ export const INITIAL_LINKS = [
     categoryId: 'lists',
     tags: ['Archive', 'Wayback Machine', 'History', 'Library'],
     isPinned: true,
-    clickCount: 240,
+    clickCount: 0,
     createdAt: '2026-03-13T12:00:00.000Z',
   },
   {
@@ -885,7 +885,7 @@ export const INITIAL_LINKS = [
     categoryId: 'lists',
     tags: ['Index', 'Free Media', 'Awesome List', 'Tools'],
     isPinned: true,
-    clickCount: 275,
+    clickCount: 0,
     createdAt: '2026-03-14T13:00:00.000Z',
   },
 
@@ -900,7 +900,7 @@ export const INITIAL_LINKS = [
     categoryId: 'typing',
     tags: ['Typing', 'Education', 'Lessons', 'Keyboard'],
     isPinned: false,
-    clickCount: 110,
+    clickCount: 0,
     createdAt: '2026-03-15T10:00:00.000Z',
   },
   {
@@ -911,7 +911,7 @@ export const INITIAL_LINKS = [
     categoryId: 'typing',
     tags: ['Typing', 'Speed Test', 'WPM', 'Minimalist'],
     isPinned: false,
-    clickCount: 190,
+    clickCount: 0,
     createdAt: '2026-03-15T11:00:00.000Z',
   },
   {
@@ -922,7 +922,7 @@ export const INITIAL_LINKS = [
     categoryId: 'typing',
     tags: ['Typing', 'Adaptive', 'Tutor', 'Keyboard'],
     isPinned: false,
-    clickCount: 95,
+    clickCount: 0,
     createdAt: '2026-03-15T12:00:00.000Z',
   },
 ];
