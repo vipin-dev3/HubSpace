@@ -4,23 +4,16 @@ import { INITIAL_CATEGORIES, INITIAL_LINKS } from '../data/linksData';
 
 const LinksContext = createContext();
 
-const CURRENT_DATA_VERSION = 'v6_zero_launches';
+const CURRENT_DATA_VERSION = 'v7_persistent_launches';
 
 function syncStorageWithInitialData() {
   try {
     const savedVersion = localStorage.getItem('hubspace_data_version');
-    const savedLinks = localStorage.getItem('hubspace_links');
+    const savedLinksRaw = localStorage.getItem('hubspace_links');
+    const savedCategoriesRaw = localStorage.getItem('hubspace_categories');
 
-    // Force purge if version mismatch or if old legacy links (chatgpt, claude, etc.) are present
-    const needsReset =
-      savedVersion !== CURRENT_DATA_VERSION ||
-      !savedLinks ||
-      savedLinks.includes('chatgpt.com') ||
-      savedLinks.includes('claude.ai') ||
-      savedLinks.includes('link-1') ||
-      savedLinks.includes('link-6');
-
-    if (needsReset) {
+    // Fresh initialization if no links are stored
+    if (!savedLinksRaw) {
       localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
       localStorage.setItem('hubspace_categories', JSON.stringify(INITIAL_CATEGORIES));
       localStorage.setItem('hubspace_links', JSON.stringify(INITIAL_LINKS));
@@ -30,10 +23,69 @@ function syncStorageWithInitialData() {
       };
     }
 
-    const categories = JSON.parse(localStorage.getItem('hubspace_categories')) || INITIAL_CATEGORIES;
-    const links = JSON.parse(savedLinks) || INITIAL_LINKS;
-    return { categories, links };
-  } catch {
+    const parsedLinks = JSON.parse(savedLinksRaw);
+    const parsedCategories = savedCategoriesRaw ? JSON.parse(savedCategoriesRaw) : INITIAL_CATEGORIES;
+
+    // Check if legacy ChatGPT or Claude links are present
+    const hasLegacy = Array.isArray(parsedLinks) && parsedLinks.some(
+      (l) => l.url?.includes('chatgpt.com') || l.url?.includes('claude.ai')
+    );
+
+    // If already on latest version, valid array, and no legacy links, return stored data as-is
+    if (savedVersion === CURRENT_DATA_VERSION && Array.isArray(parsedLinks) && !hasLegacy) {
+      return {
+        categories: parsedCategories,
+        links: parsedLinks,
+      };
+    }
+
+    // Version migration or legacy cleanup: preserve user clicks and custom links
+    const clickMap = new Map();
+    if (Array.isArray(parsedLinks)) {
+      parsedLinks.forEach((l) => {
+        if (l.id && typeof l.clickCount === 'number') {
+          clickMap.set(l.id, l.clickCount);
+        }
+        if (l.url && typeof l.clickCount === 'number') {
+          clickMap.set(l.url.trim().toLowerCase(), l.clickCount);
+        }
+      });
+    }
+
+    // Rehydrate INITIAL_LINKS with any previously recorded clicks
+    const mergedLinks = INITIAL_LINKS.map((seedLink) => {
+      const existingClicks = clickMap.get(seedLink.id) ?? clickMap.get(seedLink.url.trim().toLowerCase()) ?? 0;
+      return {
+        ...seedLink,
+        clickCount: existingClicks,
+      };
+    });
+
+    // Keep any user-added custom links (not in INITIAL_LINKS and not legacy)
+    const seedIds = new Set(INITIAL_LINKS.map((l) => l.id));
+    const seedUrls = new Set(INITIAL_LINKS.map((l) => l.url.trim().toLowerCase()));
+    const customLinks = Array.isArray(parsedLinks)
+      ? parsedLinks.filter(
+          (l) =>
+            !seedIds.has(l.id) &&
+            !seedUrls.has(l.url?.trim().toLowerCase()) &&
+            !l.url?.includes('chatgpt.com') &&
+            !l.url?.includes('claude.ai')
+        )
+      : [];
+
+    const finalLinks = [...mergedLinks, ...customLinks];
+
+    localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
+    localStorage.setItem('hubspace_categories', JSON.stringify(INITIAL_CATEGORIES));
+    localStorage.setItem('hubspace_links', JSON.stringify(finalLinks));
+
+    return {
+      categories: INITIAL_CATEGORIES,
+      links: finalLinks,
+    };
+  } catch (err) {
+    console.error('Error synchronizing storage:', err);
     return {
       categories: INITIAL_CATEGORIES,
       links: INITIAL_LINKS,
@@ -243,6 +295,9 @@ export function LinksProvider({ children }) {
   };
 
   const resetToDefaultData = () => {
+    localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
+    localStorage.setItem('hubspace_categories', JSON.stringify(INITIAL_CATEGORIES));
+    localStorage.setItem('hubspace_links', JSON.stringify(INITIAL_LINKS));
     setCategories(INITIAL_CATEGORIES);
     setLinks(INITIAL_LINKS);
     setSelectedCategory('all');
