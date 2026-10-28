@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import {
-  ExternalLink,
+  ArrowUpRight,
   Copy,
   Check,
   Edit2,
   Trash2,
-  MousePointerClick,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import FaviconImage from '../common/FaviconImage';
@@ -22,8 +21,8 @@ export default function LinkCardDetailed({ link }) {
     e.stopPropagation();
     navigator.clipboard.writeText(link.url);
     setCopied(true);
-    addToast(`Copied URL: ${domain}`, 'success');
-    setTimeout(() => setCopied(false), 2000);
+    addToast(`Copied: ${domain}`, 'success');
+    setTimeout(() => setCopied(false), 1800);
   };
 
   const handleEdit = (e) => {
@@ -52,24 +51,25 @@ export default function LinkCardDetailed({ link }) {
   };
 
   return (
-    <div className="group relative rounded-2xl glass-card p-5 flex flex-col justify-between transition-all duration-300">
-      {/* Top Row: Favicon, Title, Domain & Pin/Action buttons */}
+    <div className="group relative rounded-xl craft-card p-4 sm:p-4.5 flex flex-col justify-between transition-all duration-200">
+      {/* Top Section: Favicon, Title, Domain & Copy */}
       <div>
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200/60 dark:border-white/5 shrink-0 group-hover:scale-105 transition-transform">
-              <FaviconImage url={link.url} title={link.title} className="w-6 h-6" />
+        <div className="flex items-start justify-between gap-3 mb-2.5">
+          <div className="flex items-start gap-3 min-w-0">
+            {/* Favicon container */}
+            <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/[0.05] border border-slate-200/80 dark:border-white/[0.08] flex items-center justify-center shrink-0 mt-0.5">
+              <FaviconImage url={link.url} title={link.title} className="w-5 h-5" />
             </div>
+
             <div className="min-w-0">
               <a
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => incrementClick(link.id)}
-                className="text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 leading-snug group/link"
+                className="text-sm font-semibold text-slate-900 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1 leading-snug group/link"
               >
                 <span className="truncate">{link.title}</span>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover/link:text-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
               </a>
               <p className="text-[11px] font-mono text-slate-400 dark:text-slate-500 truncate mt-0.5">
                 {domain}
@@ -78,26 +78,28 @@ export default function LinkCardDetailed({ link }) {
           </div>
 
           {/* Quick Copy Action */}
-          <div className="flex items-center gap-1 shrink-0">
-            <button
-              onClick={handleCopy}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              title="Copy URL"
-              aria-label="Copy link"
-            >
-              {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
-            </button>
-          </div>
+          <button
+            onClick={handleCopy}
+            className="p-1.5 rounded-md text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors shrink-0"
+            title="Copy URL"
+            aria-label="Copy link"
+          >
+            {copied ? (
+              <Check className="w-3.5 h-3.5 text-emerald-500 stroke-[2.5]" />
+            ) : (
+              <Copy className="w-3.5 h-3.5" />
+            )}
+          </button>
         </div>
 
         {/* Description */}
-        <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">
+        <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-3.5">
           {link.description || 'No description provided.'}
         </p>
       </div>
 
-      {/* Bottom Row: Tags & Footer Actions */}
-      <div className="pt-3 border-t border-slate-100 dark:border-white/5 space-y-3">
+      {/* Bottom Section: Tags & Action Telemetry */}
+      <div className="pt-3 border-t border-slate-100 dark:border-white/[0.06] space-y-2.5">
         {/* Tag Badges */}
         {link.tags && link.tags.length > 0 && (
           <div className="flex items-center gap-1.5 flex-wrap">
@@ -105,7 +107,7 @@ export default function LinkCardDetailed({ link }) {
               <button
                 key={tag}
                 onClick={(e) => handleTagClick(e, tag)}
-                className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-500/10 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/20 transition-all border border-transparent"
+                className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.05] text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-500/20 border border-slate-200/60 dark:border-white/[0.06] transition-colors"
                 title={`Filter by tag #${tag}`}
               >
                 #{tag}
@@ -114,17 +116,20 @@ export default function LinkCardDetailed({ link }) {
           </div>
         )}
 
-        {/* Action Bar */}
-        <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
-          <div className="flex items-center gap-1 text-[11px] text-slate-400 dark:text-slate-500" title="Click count">
-            <MousePointerClick className="w-3.5 h-3.5" />
-            <span>{link.clickCount || 0} clicks</span>
+        {/* Telemetry Footer */}
+        <div className="flex items-center justify-between text-xs pt-0.5">
+          <div
+            className="flex items-center gap-1.5 text-[11px] font-mono text-slate-400 dark:text-slate-500 tabular-nums"
+            title="Total launches"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600" />
+            <span>{link.clickCount || 0} launches</span>
           </div>
 
           <div className="flex items-center gap-1">
             <button
               onClick={handleEdit}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-indigo-500 hover:bg-indigo-500/10 transition-colors"
+              className="p-1.5 rounded-md text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors"
               title="Edit Bookmark"
             >
               <Edit2 className="w-3.5 h-3.5" />
@@ -132,7 +137,7 @@ export default function LinkCardDetailed({ link }) {
 
             <button
               onClick={handleDelete}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition-colors"
+              className="p-1.5 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition-colors"
               title="Delete Bookmark"
             >
               <Trash2 className="w-3.5 h-3.5" />
@@ -143,10 +148,10 @@ export default function LinkCardDetailed({ link }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => incrementClick(link.id)}
-              className="ml-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-600/10 hover:bg-indigo-600 text-indigo-600 hover:text-white dark:bg-indigo-500/20 dark:hover:bg-indigo-600 dark:text-indigo-300 dark:hover:text-white font-medium text-xs transition-colors"
+              className="ml-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900 text-white hover:bg-blue-600 dark:bg-white dark:text-slate-950 dark:hover:bg-blue-500 dark:hover:text-white font-medium text-xs transition-colors shadow-sm group/open"
             >
-              <span>Open</span>
-              <ExternalLink className="w-3 h-3" />
+              <span>Launch</span>
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover/open:translate-x-0.5 group-hover/open:-translate-y-0.5 transition-transform" />
             </a>
           </div>
         </div>
@@ -154,4 +159,3 @@ export default function LinkCardDetailed({ link }) {
     </div>
   );
 }
-

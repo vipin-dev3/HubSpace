@@ -49,23 +49,20 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#0a0d14] text-slate-900 dark:text-slate-100 transition-colors">
-      {/* Background Ambient Glows */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 -right-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      </div>
+    <div className="min-h-screen flex flex-col bg-[#f8fafc] dark:bg-[#08090d] text-slate-900 dark:text-slate-100 transition-colors relative selection:bg-blue-500/20">
+      {/* Architectural Background Grid & Single Soft Light Cone */}
+      <div className="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-60 dark:opacity-80" />
+      <div className="ambient-light-cone" />
 
       {/* Header */}
       <Header />
 
       {/* Main Content Area */}
       <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-16">
-        {/* Top Stats Overview */}
+        {/* Top Telemetry / Status Deck */}
         <StatsOverview />
 
-        {/* Search Bar & Category Dropdown Section */}
+        {/* Command Search Bar & Category Navigation */}
         <FilterBar />
 
         {/* Categorized Sections */}
@@ -83,18 +80,19 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-slate-200/80 dark:border-white/10 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-slate-700 dark:text-slate-300">HubSpace</span>
-            <span>—</span>
-            <span>Organize & access categorized web links in one central place</span>
+      <footer className="relative z-10 border-t border-slate-200/80 dark:border-white/[0.06] py-6 text-xs text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-[#08090d]/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5">
+            <span className="font-semibold text-slate-800 dark:text-slate-200 tracking-tight">HubSpace Atlas</span>
+            <span className="text-slate-300 dark:text-slate-700">•</span>
+            <span className="text-[11px] text-slate-500 dark:text-slate-400">Curated Web & Developer Telemetry</span>
           </div>
-          <div className="flex items-center gap-4 text-[11px]">
-            <span>Local Browser Storage</span>
-            <span>•</span>
-            <span>Instant Search (Fuse.js)</span>
-            <span>•</span>
+          <div className="flex items-center gap-3 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+            <span className="inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              Secure Client Storage
+            </span>
+            <span className="text-slate-300 dark:text-slate-700">•</span>
             <span>Zero Tracking</span>
           </div>
         </div>
