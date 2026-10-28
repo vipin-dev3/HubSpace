@@ -215,7 +215,7 @@ export default function LoginPage() {
           {/* Footer note */}
           <div className="mt-5 pt-4 border-t border-slate-200/60 dark:border-white/[0.06] flex items-center justify-center gap-1.5 text-[11px] font-mono text-slate-400 dark:text-slate-500">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-            <span>Encrypted Local Storage (Dracula)</span>
+            <span>Encrypted Local Storage • Secure Vault</span>
           </div>
         </div>
       </motion.div>

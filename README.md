@@ -6,7 +6,7 @@
 
 ## ✨ Features
 
-- **🔐 Private Vault Authentication**: Secure single-user client gate (`Dracula` / `Tools`) with remember-me persistent sessions.
+- **🔐 Private Vault Authentication**: Secure single-user client gate with persistent sessions.
 - **🏛️ Bespoke Architectural Design**: Eliminates generic AI template patterns in favor of a precision software design language (deep obsidian canvas, fine technical dot-matrix grid, controlled ambient light, and hairline borders).
 - **⚡ Hybrid Command Search (Fuse.js)**: Instant fuzzy and substring search across bookmark titles, URLs, descriptions, tags, and category names with real-time match counters.
 - **🗂️ 13 Curated Knowledge Clusters (67 Tools)**:
@@ -69,9 +69,7 @@ npm install
 ```bash
 npm run dev
 ```
-Open your browser at `http://localhost:5173` and log in:
-- **Username**: `Dracula`
-- **Password**: `Tools`
+Open your browser at `http://localhost:5173` and enter your configured credentials to access the directory.
 
 ### 3. Build for Production
 ```bash
