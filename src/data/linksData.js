@@ -103,11 +103,20 @@ export const INITIAL_CATEGORIES = [
     badgeClass: 'bg-blue-500/10 text-blue-400 border-blue-500/20 dark:text-blue-300',
     glowColor: 'rgba(59, 130, 246, 0.25)',
   },
+  {
+    id: 'games-fun',
+    name: 'Games & Simulation',
+    description: 'Browser-based city building simulations, mathematical puzzle games, and interactive entertainment.',
+    icon: 'Gamepad2',
+    color: 'orange',
+    badgeClass: 'bg-orange-500/10 text-orange-400 border-orange-500/20 dark:text-orange-300',
+    glowColor: 'rgba(249, 115, 22, 0.25)',
+  },
 ];
 
 export const INITIAL_LINKS = [
   // ==========================================
-  // 1. AI & Machine Learning (12 links)
+  // 1. AI & Machine Learning (13 links)
   // ==========================================
   {
     id: 'link-arena-ai',
@@ -241,9 +250,20 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-01-21T21:00:00.000Z',
   },
+  {
+    id: 'link-aifreeforever',
+    title: 'AI Free Forever',
+    url: 'https://aifreeforever.com/',
+    description: 'Curated free access portal aggregating leading LLMs, AI chat systems, and creative tools without requiring accounts or signups.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'Free AI', 'LLM Aggregator', 'No Signup', 'Multi-Model'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-01T10:15:00.000Z',
+  },
 
   // ==========================================
-  // 2. Creative Studio & Design (9 links)
+  // 2. Creative Studio & Design (10 links)
   // ==========================================
   {
     id: 'link-jitter-video',
@@ -343,6 +363,17 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-01-30T18:00:00.000Z',
+  },
+  {
+    id: 'link-paper-animator',
+    title: 'Paper Animator',
+    url: 'https://paperanimator.com/',
+    description: 'Browser animation studio converting photos into paper cutout stop-motion animations, kinetic typography, and match cuts.',
+    categoryId: 'creative-design',
+    tags: ['Animation', 'Paper Cutout', 'Motion Design', 'Video Editing', 'Creative'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-01T10:05:00.000Z',
   },
 
   // ==========================================
@@ -515,7 +546,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 4. Education & Coding (10 links)
+  // 4. Education & Coding (9 links)
   // ==========================================
   {
     id: 'link-edx',
@@ -615,17 +646,6 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-02-24T18:00:00.000Z',
-  },
-  {
-    id: 'link-calcsolver',
-    title: 'CalcSolver',
-    url: 'https://calcsolver.net/',
-    description: 'Interactive calculator playground, mathematical puzzle games, and step-by-step algebraic problem solvers.',
-    categoryId: 'education-learning',
-    tags: ['Math', 'Calculators', 'Puzzle Games', 'Solver'],
-    isPinned: false,
-    clickCount: 0,
-    createdAt: '2026-02-25T19:00:00.000Z',
   },
 
   // ==========================================
@@ -795,7 +815,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 8. Software & GitHub Repos (4 links)
+  // 8. Software & GitHub Repos (5 links)
   // ==========================================
   {
     id: 'link-openalternative',
@@ -818,6 +838,17 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-03-21T11:00:00.000Z',
+  },
+  {
+    id: 'link-reactbits',
+    title: 'React Bits',
+    url: 'https://reactbits.dev/',
+    description: 'Extensive curated library of animated, customizable React and Tailwind CSS UI components ready for copy-paste implementation.',
+    categoryId: 'software-tools',
+    tags: ['React', 'UI Components', 'Tailwind CSS', 'Animation', 'Frontend', 'Developer Tools'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-01T10:20:00.000Z',
   },
   {
     id: 'link-github-sherlock',
@@ -902,7 +933,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 10. Movies & Anime (2 links)
+  // 10. Movies & Anime (5 links)
   // ==========================================
   {
     id: 'link-streamex',
@@ -916,6 +947,17 @@ export const INITIAL_LINKS = [
     createdAt: '2026-04-01T10:00:00.000Z',
   },
   {
+    id: 'link-framextv',
+    title: 'frameXTV',
+    url: 'https://framextv.cc/',
+    description: 'Ad-free on-demand streaming portal providing high-definition playback for recent cinematic movies, series, and TV episodes.',
+    categoryId: 'movies-anime',
+    tags: ['Movies', 'TV Shows', 'Streaming', 'Cinema', 'Entertainment'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-01T10:25:00.000Z',
+  },
+  {
     id: 'link-anisuge',
     title: 'Anisuge',
     url: 'https://anisuge.tv/',
@@ -925,6 +967,28 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-04-02T11:00:00.000Z',
+  },
+  {
+    id: 'link-miruro',
+    title: 'Miruro',
+    url: 'https://miruro.cx/',
+    description: 'Modern ad-free anime streaming web app featuring a subbed and dubbed HD catalog, airing schedules, and AniList sync.',
+    categoryId: 'movies-anime',
+    tags: ['Anime', 'Streaming', 'Sub & Dub', 'AniList', 'HD Anime'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-01T10:30:00.000Z',
+  },
+  {
+    id: 'link-trace-moe',
+    title: 'trace.moe',
+    url: 'https://trace.moe/',
+    description: 'Anime scene reverse search engine that accurately identifies anime titles, season, episode, and timestamp from any screenshot.',
+    categoryId: 'movies-anime',
+    tags: ['Anime', 'Reverse Search', 'Scene Finder', 'Screenshot Search', 'Otaku'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-01T10:10:00.000Z',
   },
 
   // ==========================================
@@ -962,5 +1026,31 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-04-07T12:00:00.000Z',
+  },
+
+  // ==========================================
+  // 12. Games & Simulation (2 links)
+  // ==========================================
+  {
+    id: 'link-cityrt',
+    title: 'CityRT',
+    url: 'https://cityrt.com/en/',
+    description: 'Browser-based multiplayer city builder simulation with road networks, zoning, public services, and fiscal budget management.',
+    categoryId: 'games-fun',
+    tags: ['Games', 'City Builder', 'Simulation', 'Multiplayer', 'Strategy'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-01T10:00:00.000Z',
+  },
+  {
+    id: 'link-calcsolver',
+    title: 'CalcSolver',
+    url: 'https://calcsolver.net/',
+    description: 'Interactive calculator playground, mathematical puzzle games, and step-by-step algebraic problem solvers.',
+    categoryId: 'games-fun',
+    tags: ['Games', 'Math', 'Calculators', 'Puzzle Games', 'Solver'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-02-25T19:00:00.000Z',
   },
 ];

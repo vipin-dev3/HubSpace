@@ -4,7 +4,7 @@ import { INITIAL_CATEGORIES, INITIAL_LINKS } from '../data/linksData';
 
 const LinksContext = createContext();
 
-const CURRENT_DATA_VERSION = 'v9_perfect_categorization';
+const CURRENT_DATA_VERSION = 'v10_new_links';
 
 function syncStorageWithInitialData() {
   try {
