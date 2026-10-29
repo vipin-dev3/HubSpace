@@ -10,6 +10,7 @@ import {
 import { useLinks } from '../../context/LinksContext';
 import { useAuth } from '../../context/AuthContext';
 import ThemeSelector from '../common/ThemeSelector';
+import BrandLogo from '../common/BrandLogo';
 
 export default function Header() {
   const { logout } = useAuth();
@@ -26,22 +27,7 @@ export default function Header() {
           {/* Logo & Brand Identity */}
           <div className="flex items-center gap-3 shrink-0">
             <div className="relative group flex items-center justify-center">
-              {/* Bespoke Geometric Nexus Emblem */}
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 flex items-center justify-center font-mono font-bold shadow-sm transition-transform duration-200 group-hover:scale-105 border border-slate-800 dark:border-white/20">
-                <svg
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="3" fill="currentColor" fillOpacity="0.2" />
-                  <path d="M12 2v3m0 14v3M2 12h3m14 0h3" />
-                  <circle cx="12" cy="12" r="9" strokeDasharray="2 3" />
-                </svg>
-              </div>
+              <BrandLogo className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl" />
             </div>
 
             <div>

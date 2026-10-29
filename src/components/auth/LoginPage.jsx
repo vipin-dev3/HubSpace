@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import ThemeSelector from '../common/ThemeSelector';
+import BrandLogo from '../common/BrandLogo';
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -58,21 +59,7 @@ export default function LoginPage() {
       {/* Top Navigation Bar: Theme selector */}
       <header className="absolute top-0 inset-x-0 p-4 sm:p-6 flex items-center justify-between max-w-7xl mx-auto z-20 w-full">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 flex items-center justify-center font-mono font-bold shadow-sm border border-slate-800 dark:border-white/20">
-            <svg
-              className="w-4 h-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="3" fill="currentColor" fillOpacity="0.2" />
-              <path d="M12 2v3m0 14v3M2 12h3m14 0h3" />
-              <circle cx="12" cy="12" r="9" strokeDasharray="2 3" />
-            </svg>
-          </div>
+          <BrandLogo className="w-8 h-8 rounded-xl" />
           <span className="text-sm font-semibold tracking-[-0.03em] text-slate-900 dark:text-white">
             HubSpace Atlas
           </span>
