@@ -6,18 +6,15 @@ import {
   KeyRound,
   Eye,
   EyeOff,
-  Sun,
-  Moon,
   AlertCircle,
   ArrowRight,
   ShieldCheck,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import { useTheme } from '../../context/ThemeContext';
+import ThemeSelector from '../common/ThemeSelector';
 
 export default function LoginPage() {
   const { login } = useAuth();
-  const { isDark, toggleTheme } = useTheme();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -53,12 +50,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 bg-[#f8fafc] dark:bg-[#08090d] text-slate-900 dark:text-slate-100 transition-colors overflow-hidden">
+    <div className="min-h-screen relative flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 theme-canvas text-slate-900 dark:text-slate-100 transition-colors overflow-hidden">
       {/* Architectural Background Grid & Single Soft Light Cone */}
       <div className="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-60 dark:opacity-80" />
       <div className="ambient-light-cone" />
 
-      {/* Top Navigation Bar: Theme toggle */}
+      {/* Top Navigation Bar: Theme selector */}
       <header className="absolute top-0 inset-x-0 p-4 sm:p-6 flex items-center justify-between max-w-7xl mx-auto z-20 w-full">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 flex items-center justify-center font-mono font-bold shadow-sm border border-slate-800 dark:border-white/20">
@@ -81,14 +78,7 @@ export default function LoginPage() {
           </span>
         </div>
 
-        <button
-          onClick={toggleTheme}
-          className="p-2 sm:p-2 rounded-xl text-slate-600 dark:text-slate-300 bg-white dark:bg-[#121622] hover:bg-slate-100 dark:hover:bg-[#181d2d] border border-slate-200/80 dark:border-white/[0.08] transition-colors shadow-sm"
-          title={`Switch to ${isDark ? 'Light' : 'Dark'} mode`}
-          aria-label="Toggle theme"
-        >
-          {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
-        </button>
+        <ThemeSelector align="right" showLabel={true} />
       </header>
 
       {/* Login Card */}

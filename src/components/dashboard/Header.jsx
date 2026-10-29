@@ -1,8 +1,6 @@
 import React from 'react';
 import {
   Plus,
-  Moon,
-  Sun,
   LayoutGrid,
   Grid3X3,
   List,
@@ -10,8 +8,8 @@ import {
   LogOut,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
-import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
+import ThemeSelector from '../common/ThemeSelector';
 
 export default function Header() {
   const { logout } = useAuth();
@@ -21,10 +19,8 @@ export default function Header() {
     setModalState,
   } = useLinks();
 
-  const { toggleTheme, isDark } = useTheme();
-
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-xl bg-white/85 dark:bg-[#08090d]/85 border-b border-slate-200/80 dark:border-white/[0.07] transition-colors">
+    <header className="sticky top-0 z-40 backdrop-blur-xl craft-panel border-b border-slate-200/80 dark:border-white/[0.07] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18 gap-3 sm:gap-6">
           {/* Logo & Brand Identity */}
@@ -117,15 +113,8 @@ export default function Header() {
               <span className="hidden xl:inline text-[11px] font-mono">Sync</span>
             </button>
 
-            {/* Dark/Light Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 sm:p-2 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100/80 dark:bg-[#121622] hover:bg-slate-200/70 dark:hover:bg-[#181d2d] border border-slate-200/80 dark:border-white/[0.08] transition-colors"
-              title={`Switch to ${isDark ? 'Light' : 'Dark'} mode`}
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
-            </button>
+            {/* Theme Selector Palette */}
+            <ThemeSelector align="right" />
 
             {/* User Session Pill & Logout */}
             <div className="flex items-center gap-1 pl-1 border-l border-slate-200/80 dark:border-white/[0.08]">

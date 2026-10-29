@@ -7,7 +7,15 @@
 ## ✨ Features
 
 - **🔐 Private Vault Authentication**: Secure single-user client gate with persistent sessions.
-- **🏛️ Bespoke Architectural Design**: Eliminates generic AI template patterns in favor of a precision software design language (deep obsidian canvas, fine technical dot-matrix grid, controlled ambient light, and hairline borders).
+- **🎨 7 Aesthetic Appearance Themes**:
+  - **Obsidian**: Architectural blueprint with cobalt blue precision
+  - **Dracula**: Vampiric gothic twilight with neon purple & pink accents
+  - **Matrix Cyber**: Deep black terminal with phosphor emerald glow
+  - **Tokyo Night**: Neon twilight navy with synthwave cyan
+  - **Nord Frost**: Arctic Scandinavian slate with glacial cyan
+  - **Amber CRT**: Vintage monochrome CRT terminal with warm gold
+  - **Clean Studio**: High-contrast paper canvas with international blue
+- **🏛️ Bespoke Architectural Design**: Eliminates generic AI template patterns in favor of a precision software design language (fine technical dot-matrix grid, controlled ambient light, and hairline borders).
 - **⚡ Hybrid Command Search (Fuse.js)**: Instant fuzzy and substring search across bookmark titles, URLs, descriptions, tags, and category names with real-time match counters.
 - **🗂️ 13 Curated Knowledge Clusters (67 Tools)**:
   - AI Tools (Benchmark arenas, model hubs, generative UI)

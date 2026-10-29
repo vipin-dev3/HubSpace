@@ -2,32 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --theme-bg: #08090d;
+  --theme-panel: rgba(15, 18, 26, 0.88);
+  --theme-card: #0f121a;
+  --theme-card-hover: #141824;
+  --theme-border: rgba(255, 255, 255, 0.08);
+  --theme-border-hover: rgba(59, 130, 246, 0.45);
+  --theme-accent: #3b82f6;
+  --theme-accent-hover: #60a5fa;
+  --theme-accent-subtle: rgba(59, 130, 246, 0.12);
+  --theme-glow: rgba(59, 130, 246, 0.12);
+  --theme-grid: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="obsidian"] {
+  --theme-bg: #08090d;
+  --theme-panel: rgba(15, 18, 26, 0.88);
+  --theme-card: #0f121a;
+  --theme-card-hover: #141824;
+  --theme-border: rgba(255, 255, 255, 0.08);
+  --theme-border-hover: rgba(59, 130, 246, 0.45);
+  --theme-accent: #3b82f6;
+  --theme-accent-hover: #60a5fa;
+  --theme-accent-subtle: rgba(59, 130, 246, 0.12);
+  --theme-glow: rgba(59, 130, 246, 0.12);
+  --theme-grid: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dracula"] {
+  --theme-bg: #1e1f29;
+  --theme-panel: rgba(33, 34, 44, 0.92);
+  --theme-card: #282a36;
+  --theme-card-hover: #323544;
+  --theme-border: rgba(189, 147, 249, 0.16);
+  --theme-border-hover: rgba(189, 147, 249, 0.5);
+  --theme-accent: #bd93f9;
+  --theme-accent-hover: #ff79c6;
+  --theme-accent-subtle: rgba(189, 147, 249, 0.14);
+  --theme-glow: rgba(189, 147, 249, 0.16);
+  --theme-grid: rgba(189, 147, 249, 0.08);
+}
+
+[data-theme="cyberpunk"] {
+  --theme-bg: #050806;
+  --theme-panel: rgba(10, 18, 14, 0.92);
+  --theme-card: #0c1711;
+  --theme-card-hover: #12241b;
+  --theme-border: rgba(16, 185, 129, 0.16);
+  --theme-border-hover: rgba(0, 255, 157, 0.5);
+  --theme-accent: #10b981;
+  --theme-accent-hover: #00ff9d;
+  --theme-accent-subtle: rgba(16, 185, 129, 0.14);
+  --theme-glow: rgba(16, 185, 129, 0.16);
+  --theme-grid: rgba(16, 185, 129, 0.08);
+}
+
+[data-theme="tokyo-night"] {
+  --theme-bg: #13141f;
+  --theme-panel: rgba(22, 22, 34, 0.92);
+  --theme-card: #1a1b26;
+  --theme-card-hover: #24283b;
+  --theme-border: rgba(122, 162, 247, 0.16);
+  --theme-border-hover: rgba(122, 162, 247, 0.5);
+  --theme-accent: #7aa2f7;
+  --theme-accent-hover: #bb9af7;
+  --theme-accent-subtle: rgba(122, 162, 247, 0.14);
+  --theme-glow: rgba(122, 162, 247, 0.16);
+  --theme-grid: rgba(122, 162, 247, 0.08);
+}
+
+[data-theme="nord"] {
+  --theme-bg: #202530;
+  --theme-panel: rgba(38, 44, 56, 0.92);
+  --theme-card: #2e3440;
+  --theme-card-hover: #3b4455;
+  --theme-border: rgba(136, 192, 208, 0.16);
+  --theme-border-hover: rgba(136, 192, 208, 0.5);
+  --theme-accent: #88c0d0;
+  --theme-accent-hover: #81a1c1;
+  --theme-accent-subtle: rgba(136, 192, 208, 0.14);
+  --theme-glow: rgba(136, 192, 208, 0.15);
+  --theme-grid: rgba(136, 192, 208, 0.07);
+}
+
+[data-theme="amber"] {
+  --theme-bg: #0e0b07;
+  --theme-panel: rgba(24, 18, 12, 0.92);
+  --theme-card: #1a130b;
+  --theme-card-hover: #261c10;
+  --theme-border: rgba(245, 158, 11, 0.16);
+  --theme-border-hover: rgba(245, 158, 11, 0.5);
+  --theme-accent: #f59e0b;
+  --theme-accent-hover: #fbbf24;
+  --theme-accent-subtle: rgba(245, 158, 11, 0.14);
+  --theme-glow: rgba(245, 158, 11, 0.16);
+  --theme-grid: rgba(245, 158, 11, 0.08);
+}
+
+[data-theme="light"] {
+  --theme-bg: #f8fafc;
+  --theme-panel: rgba(255, 255, 255, 0.92);
+  --theme-card: #ffffff;
+  --theme-card-hover: #f1f5f9;
+  --theme-border: rgba(226, 232, 240, 0.9);
+  --theme-border-hover: rgba(37, 99, 235, 0.45);
+  --theme-accent: #2563eb;
+  --theme-accent-hover: #3b82f6;
+  --theme-accent-subtle: rgba(37, 99, 235, 0.1);
+  --theme-glow: rgba(37, 99, 235, 0.06);
+  --theme-grid: rgba(100, 116, 139, 0.1);
+}
+
 @layer base {
   * {
-    border-color: rgba(226, 232, 240, 0.8);
-  }
-  .dark * {
-    border-color: rgba(255, 255, 255, 0.07);
+    border-color: var(--theme-border);
   }
   html {
     color-scheme: light dark;
+    background-color: var(--theme-bg);
   }
   body {
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
+}
+
+/* Master theme canvas container */
+.theme-canvas {
+  background-color: var(--theme-bg);
+  transition: background-color 0.25s ease;
 }
 
 /* Architectural technical grid background */
 .bg-grid-pattern {
-  background-image: radial-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-.dark .bg-grid-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(var(--theme-grid) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -39,56 +153,33 @@
   transform: translateX(-50%);
   width: 1000px;
   height: 420px;
-  background: radial-gradient(50% 100% at 50% 0%, rgba(37, 99, 235, 0.08) 0%, rgba(37, 99, 235, 0.01) 60%, transparent 100%);
+  background: radial-gradient(50% 100% at 50% 0%, var(--theme-glow) 0%, transparent 100%);
   pointer-events: none;
   z-index: 0;
-}
-
-.dark .ambient-light-cone {
-  background: radial-gradient(50% 100% at 50% 0%, rgba(59, 130, 246, 0.08) 0%, rgba(37, 99, 235, 0.01) 60%, transparent 100%);
+  transition: background 0.3s ease;
 }
 
 /* High-craft card surfaces */
 .craft-card {
-  background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  background-color: var(--theme-card);
+  border: 1px solid var(--theme-border);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.dark .craft-card {
-  background: #0f121a;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
-}
-
 .craft-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(37, 99, 235, 0.4);
-  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(37, 99, 235, 0.1);
-}
-
-.dark .craft-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(96, 165, 250, 0.35);
-  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(96, 165, 250, 0.15);
+  border-color: var(--theme-border-hover);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.25), 0 0 0 1px var(--theme-accent-subtle);
 }
 
 /* High-craft panel surfaces (header, search bar, dropdowns) */
 .craft-panel {
-  background: rgba(255, 255, 255, 0.92);
+  background-color: var(--theme-panel);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.85);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
-}
-
-.dark .craft-panel {
-  background: rgba(15, 18, 26, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--theme-border);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 /* Top hairline highlight for modal dialogs and executive surfaces */

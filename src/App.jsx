@@ -49,7 +49,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8fafc] dark:bg-[#08090d] text-slate-900 dark:text-slate-100 transition-colors relative selection:bg-blue-500/20">
+    <div className="min-h-screen flex flex-col theme-canvas text-slate-900 dark:text-slate-100 transition-colors relative selection:bg-blue-500/20">
       {/* Architectural Background Grid & Single Soft Light Cone */}
       <div className="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-60 dark:opacity-80" />
       <div className="ambient-light-cone" />
@@ -80,7 +80,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-slate-200/80 dark:border-white/[0.06] py-6 text-xs text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-[#08090d]/80 backdrop-blur-md">
+      <footer className="relative z-10 border-t border-slate-200/80 dark:border-white/[0.06] py-6 text-xs text-slate-500 dark:text-slate-400 craft-panel backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <span className="font-semibold text-slate-800 dark:text-slate-200 tracking-tight">HubSpace Atlas</span>
