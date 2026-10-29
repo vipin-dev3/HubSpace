@@ -4,7 +4,7 @@ import { INITIAL_CATEGORIES, INITIAL_LINKS } from '../data/linksData';
 
 const LinksContext = createContext();
 
-const CURRENT_DATA_VERSION = 'v7_persistent_launches';
+const CURRENT_DATA_VERSION = 'v8_ai_icon_brain';
 
 function syncStorageWithInitialData() {
   try {

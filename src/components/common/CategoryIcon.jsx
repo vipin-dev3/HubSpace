@@ -1,5 +1,8 @@
 import React from 'react';
 import {
+  Brain,
+  CircuitBoard,
+  Atom,
   Sparkles,
   Code2,
   Palette,
@@ -39,6 +42,9 @@ import {
 } from 'lucide-react';
 
 const ICON_MAP = {
+  Brain,
+  CircuitBoard,
+  Atom,
   Sparkles,
   Code2,
   Palette,
@@ -81,5 +87,3 @@ export default function CategoryIcon({ name, className = 'w-5 h-5' }) {
   const IconComponent = (name && ICON_MAP[name]) || Bookmark;
   return <IconComponent className={className} />;
 }
-
-

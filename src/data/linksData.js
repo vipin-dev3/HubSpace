@@ -8,7 +8,7 @@ export const INITIAL_CATEGORIES = [
     id: 'ai-tools',
     name: 'AI Tools',
     description: 'Benchmark arenas, model hubs, generative UI, and AI productivity platforms.',
-    icon: 'Sparkles',
+    icon: 'Brain',
     color: 'purple',
     gradient: 'from-purple-500/20 to-indigo-500/20',
     badgeClass: 'bg-purple-500/10 text-purple-400 border-purple-500/20 dark:text-purple-300',
