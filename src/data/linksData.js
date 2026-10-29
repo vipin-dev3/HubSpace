@@ -116,7 +116,7 @@ export const INITIAL_CATEGORIES = [
 
 export const INITIAL_LINKS = [
   // ==========================================
-  // 1. AI & Machine Learning (13 links)
+  // 1. AI & Machine Learning (14 links)
   // ==========================================
   {
     id: 'link-arena-ai',
@@ -261,9 +261,20 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-01T10:15:00.000Z',
   },
+  {
+    id: 'link-duck-ai',
+    title: 'DuckDuckGo AI (Duck.ai)',
+    url: 'https://duck.ai/',
+    description: 'Anonymous, privacy-first AI chat client powered by DuckDuckGo with direct access to GPT-4o mini, Claude 3 Haiku, and open models without logging.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'Privacy', 'DuckDuckGo', 'Anonymous Chat', 'LLM'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-02T10:00:00.000Z',
+  },
 
   // ==========================================
-  // 2. Creative Studio & Design (10 links)
+  // 2. Creative Studio & Design (11 links)
   // ==========================================
   {
     id: 'link-jitter-video',
@@ -375,9 +386,20 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-01T10:05:00.000Z',
   },
+  {
+    id: 'link-storytribe',
+    title: 'StoryTribe',
+    url: 'https://storytribeapp.com/',
+    description: 'Browser-based visual storyboard maker for filmmakers and UX teams to draft scripts, compose shots, create animatics, and share live previews.',
+    categoryId: 'creative-design',
+    tags: ['Storyboarding', 'Design', 'Filmmaking', 'Animatic', 'Creative', 'Visual Storytelling'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-02T10:05:00.000Z',
+  },
 
   // ==========================================
-  // 3. Cyber Security & OSINT (15 links)
+  // 3. Cyber Security & OSINT (17 links)
   // ==========================================
   {
     id: 'link-virustotal',
@@ -544,9 +566,31 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-02-15T10:00:00.000Z',
   },
+  {
+    id: 'link-onlinesim',
+    title: 'OnlineSim',
+    url: 'https://onlinesim.io/',
+    description: 'Online virtual number platform providing disposable SMS reception to bypass phone verification and protect personal privacy during registrations.',
+    categoryId: 'cyber-security',
+    tags: ['Privacy', 'Virtual Number', 'SMS Verification', 'Temporary Phone', 'Anonymity', 'OSINT'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-02T10:10:00.000Z',
+  },
+  {
+    id: 'link-wifimap',
+    title: 'WiFi Map',
+    url: 'https://www.wifimap.io/',
+    description: 'Global crowdsourced database indexing over 150 million accessible Wi-Fi hotspots, public network credentials, offline maps, and VPN privacy.',
+    categoryId: 'cyber-security',
+    tags: ['WiFi', 'OSINT', 'Hotspots', 'Geolocation', 'Networking', 'Privacy'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-02T10:15:00.000Z',
+  },
 
   // ==========================================
-  // 4. Education & Coding (9 links)
+  // 4. Education & Coding (10 links)
   // ==========================================
   {
     id: 'link-edx',
@@ -647,9 +691,20 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-02-24T18:00:00.000Z',
   },
+  {
+    id: 'link-studihq',
+    title: 'StudiHQ',
+    url: 'https://studihq.com/',
+    description: 'Free AI student workspace featuring study session tracking, adaptive quiz generation, revision streaks, and smart academic planning.',
+    categoryId: 'education-learning',
+    tags: ['Education', 'Study Workspace', 'AI Tutor', 'Student Tools', 'Quizzes'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-02T10:20:00.000Z',
+  },
 
   // ==========================================
-  // 5. Books & Literature (6 links)
+  // 5. Books & Literature (8 links)
   // ==========================================
   {
     id: 'link-openlibrary',
@@ -716,6 +771,28 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-03-06T15:00:00.000Z',
+  },
+  {
+    id: 'link-manybooks',
+    title: 'ManyBooks',
+    url: 'https://manybooks.net/',
+    description: 'Curated digital library providing over 50,000 free public domain and open-access ebooks formatted for ePub, Kindle, and PDF.',
+    categoryId: 'books',
+    tags: ['Books', 'Ebooks', 'Literature', 'Public Domain', 'Free Reading'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-02T10:25:00.000Z',
+  },
+  {
+    id: 'link-pdfdrive',
+    title: 'PDF Drive',
+    url: 'https://pdfdrive.webs.nf/',
+    description: 'Comprehensive PDF search engine and document repository indexing millions of free educational ebooks, research papers, and manuals.',
+    categoryId: 'books',
+    tags: ['Books', 'PDF', 'Ebooks', 'Library', 'Documents', 'Downloads'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-02T10:30:00.000Z',
   },
 
   // ==========================================
