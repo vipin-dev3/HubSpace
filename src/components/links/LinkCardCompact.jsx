@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Copy, Check, Edit2, Trash2 } from 'lucide-react';
+import { ArrowUpRight, Copy, Check } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import FaviconImage from '../common/FaviconImage';
 import { extractDomain } from '../../utils/urlHelper';
 
 export default function LinkCardCompact({ link }) {
-  const { incrementClick, setModalState, addToast } = useLinks();
+  const { incrementClick, addToast } = useLinks();
   const [copied, setCopied] = useState(false);
 
   const domain = extractDomain(link.url);
@@ -17,25 +17,6 @@ export default function LinkCardCompact({ link }) {
     setCopied(true);
     addToast(`Copied: ${domain}`, 'success');
     setTimeout(() => setCopied(false), 1800);
-  };
-
-  const handleEdit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setModalState((prev) => ({
-      ...prev,
-      addEditOpen: true,
-      editingLink: link,
-    }));
-  };
-
-  const handleDelete = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setModalState((prev) => ({
-      ...prev,
-      deleteConfirm: link,
-    }));
   };
 
   return (
@@ -74,23 +55,6 @@ export default function LinkCardCompact({ link }) {
             <Copy className="w-3 h-3" />
           )}
         </button>
-
-        <div className="hidden group-hover:flex items-center gap-0.5">
-          <button
-            onClick={handleEdit}
-            className="p-1 rounded-md text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors"
-            title="Edit"
-          >
-            <Edit2 className="w-3 h-3" />
-          </button>
-          <button
-            onClick={handleDelete}
-            className="p-1 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition-colors"
-            title="Delete"
-          >
-            <Trash2 className="w-3 h-3" />
-          </button>
-        </div>
       </div>
     </div>
   );

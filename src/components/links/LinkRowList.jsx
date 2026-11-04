@@ -3,16 +3,13 @@ import {
   ArrowUpRight,
   Copy,
   Check,
-  Edit2,
-  Trash2,
-  MousePointerClick,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import FaviconImage from '../common/FaviconImage';
 import { extractDomain } from '../../utils/urlHelper';
 
 export default function LinkRowList({ link }) {
-  const { incrementClick, setModalState, setSelectedTag, addToast } = useLinks();
+  const { incrementClick, setSelectedTag, addToast } = useLinks();
   const [copied, setCopied] = useState(false);
 
   const domain = extractDomain(link.url);
@@ -24,25 +21,6 @@ export default function LinkRowList({ link }) {
     setCopied(true);
     addToast(`Copied: ${domain}`, 'success');
     setTimeout(() => setCopied(false), 1800);
-  };
-
-  const handleEdit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setModalState((prev) => ({
-      ...prev,
-      addEditOpen: true,
-      editingLink: link,
-    }));
-  };
-
-  const handleDelete = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setModalState((prev) => ({
-      ...prev,
-      deleteConfirm: link,
-    }));
   };
 
   return (
@@ -88,12 +66,6 @@ export default function LinkRowList({ link }) {
         ))}
       </div>
 
-      {/* Launch counter */}
-      <div className="hidden sm:flex items-center gap-1 font-mono text-[11px] text-slate-400 tabular-nums shrink-0">
-        <MousePointerClick className="w-3.5 h-3.5" />
-        <span>{link.clickCount || 0}</span>
-      </div>
-
       {/* Action buttons */}
       <div className="flex items-center gap-1 shrink-0">
         <button
@@ -106,22 +78,6 @@ export default function LinkRowList({ link }) {
           ) : (
             <Copy className="w-3.5 h-3.5" />
           )}
-        </button>
-
-        <button
-          onClick={handleEdit}
-          className="p-1.5 rounded-md text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors"
-          title="Edit"
-        >
-          <Edit2 className="w-3.5 h-3.5" />
-        </button>
-
-        <button
-          onClick={handleDelete}
-          className="p-1.5 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition-colors"
-          title="Delete"
-        >
-          <Trash2 className="w-3.5 h-3.5" />
         </button>
 
         <a

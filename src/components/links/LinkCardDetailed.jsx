@@ -3,15 +3,13 @@ import {
   ArrowUpRight,
   Copy,
   Check,
-  Edit2,
-  Trash2,
 } from 'lucide-react';
 import { useLinks } from '../../context/LinksContext';
 import FaviconImage from '../common/FaviconImage';
 import { extractDomain } from '../../utils/urlHelper';
 
 export default function LinkCardDetailed({ link }) {
-  const { incrementClick, setModalState, setSelectedTag, addToast } = useLinks();
+  const { incrementClick, setSelectedTag, addToast } = useLinks();
   const [copied, setCopied] = useState(false);
 
   const domain = extractDomain(link.url);
@@ -23,25 +21,6 @@ export default function LinkCardDetailed({ link }) {
     setCopied(true);
     addToast(`Copied: ${domain}`, 'success');
     setTimeout(() => setCopied(false), 1800);
-  };
-
-  const handleEdit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setModalState((prev) => ({
-      ...prev,
-      addEditOpen: true,
-      editingLink: link,
-    }));
-  };
-
-  const handleDelete = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setModalState((prev) => ({
-      ...prev,
-      deleteConfirm: link,
-    }));
   };
 
   const handleTagClick = (e, tag) => {
@@ -116,44 +95,22 @@ export default function LinkCardDetailed({ link }) {
           </div>
         )}
 
-        {/* Telemetry Footer */}
+        {/* Card Footer */}
         <div className="flex items-center justify-between text-xs pt-0.5">
-          <div
-            className="flex items-center gap-1.5 text-[11px] font-mono text-slate-400 dark:text-slate-500 tabular-nums"
-            title="Total launches"
+          <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500 truncate">
+            {domain}
+          </span>
+
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => incrementClick(link.id)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-white hover:bg-blue-600 dark:bg-white dark:text-slate-950 dark:hover:bg-blue-500 dark:hover:text-white font-medium text-xs transition-colors shadow-sm group/open"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600" />
-            <span>{link.clickCount || 0} launches</span>
-          </div>
-
-          <div className="flex items-center gap-1">
-            <button
-              onClick={handleEdit}
-              className="p-1.5 rounded-md text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors"
-              title="Edit Bookmark"
-            >
-              <Edit2 className="w-3.5 h-3.5" />
-            </button>
-
-            <button
-              onClick={handleDelete}
-              className="p-1.5 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition-colors"
-              title="Delete Bookmark"
-            >
-              <Trash2 className="w-3.5 h-3.5" />
-            </button>
-
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => incrementClick(link.id)}
-              className="ml-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900 text-white hover:bg-blue-600 dark:bg-white dark:text-slate-950 dark:hover:bg-blue-500 dark:hover:text-white font-medium text-xs transition-colors shadow-sm group/open"
-            >
-              <span>Launch</span>
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover/open:translate-x-0.5 group-hover/open:-translate-y-0.5 transition-transform" />
-            </a>
-          </div>
+            <span>Launch</span>
+            <ArrowUpRight className="w-3.5 h-3.5 group-hover/open:translate-x-0.5 group-hover/open:-translate-y-0.5 transition-transform" />
+          </a>
         </div>
       </div>
     </div>

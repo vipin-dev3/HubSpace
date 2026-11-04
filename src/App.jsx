@@ -85,7 +85,7 @@ export default function App() {
           <div className="flex items-center gap-2.5">
             <span className="font-semibold text-slate-800 dark:text-slate-200 tracking-tight">HubSpace Atlas</span>
             <span className="text-slate-300 dark:text-slate-700">•</span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400">Curated Web & Developer Telemetry</span>
+            <span className="text-[11px] text-slate-500 dark:text-slate-400">Curated Web & Developer Directory</span>
           </div>
           <div className="flex items-center gap-3 text-[11px] font-mono text-slate-500 dark:text-slate-400">
             <span className="inline-flex items-center gap-1.5">
