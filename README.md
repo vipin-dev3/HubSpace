@@ -17,7 +17,7 @@
   - **Clean Studio**: High-contrast paper canvas with international blue
 - **🏛️ Bespoke Architectural Design**: Eliminates generic AI template patterns in favor of a precision software design language (fine technical dot-matrix grid, controlled ambient light, and hairline borders).
 - **⚡ Hybrid Command Search (Fuse.js)**: Instant fuzzy and substring search across bookmark titles, URLs, descriptions, tags, and category names with real-time match counters.
-- **🗂️ 13 Curated Knowledge Clusters (67 Tools)**:
+- **🗂️ 13 Curated Knowledge Clusters (101 Tools)**:
   - AI Tools (Benchmark arenas, model hubs, generative UI)
   - Movies And TV Shows / Anime
   - Education / Courses / Coding / Essay
