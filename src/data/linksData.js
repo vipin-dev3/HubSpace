@@ -116,7 +116,7 @@ export const INITIAL_CATEGORIES = [
 
 export const INITIAL_LINKS = [
   // ==========================================
-  // 1. AI & Machine Learning (14 links)
+  // 1. AI & Machine Learning (16 links)
   // ==========================================
   {
     id: 'link-arena-ai',
@@ -272,9 +272,31 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-02T10:00:00.000Z',
   },
+  {
+    id: 'link-ashna-ai',
+    title: 'AshnaAI',
+    url: 'https://app.ashna.ai/',
+    description: 'Multimodal AI assistant and no-code agent workspace automating workflows across chat, documents, image analysis, and research.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'AI Assistant', 'No-Code', 'Agents', 'Multimodal', 'Productivity'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:00:00.000Z',
+  },
+  {
+    id: 'link-freellmapi',
+    title: 'FreeLLMAPI (GitHub)',
+    url: 'https://github.com/tashfeenahmed/freellmapi',
+    description: 'Unified API gateway providing free access to 34 LLM providers and 635 model endpoints through a single OpenAI-compatible endpoint.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'LLM API', 'OpenAI Compatible', 'Free API', 'GitHub', 'Routing'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:05:00.000Z',
+  },
 
   // ==========================================
-  // 2. Creative Studio & Design (11 links)
+  // 2. Creative Studio & Design (14 links)
   // ==========================================
   {
     id: 'link-jitter-video',
@@ -397,9 +419,42 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-02T10:05:00.000Z',
   },
+  {
+    id: 'link-topoexport',
+    title: 'TopoExport',
+    url: 'https://topoexport.com/',
+    description: 'Geospatial vector mapping and 3D terrain export tool generating contour lines, DXF, OBJ, and STL models for CAD and architectural design.',
+    categoryId: 'creative-design',
+    tags: ['3D Terrain', 'Vector Maps', 'Architecture', 'CAD', 'GIS', 'Design'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:10:00.000Z',
+  },
+  {
+    id: 'link-voicestudio',
+    title: 'VoiceStudio (GitHub)',
+    url: 'https://github.com/debpalash/voicestudio',
+    description: 'Open-source, fully-local ElevenLabs alternative providing voice cloning, speech synthesis, dubbing, and transcription across 600+ languages.',
+    categoryId: 'creative-design',
+    tags: ['Voice Cloning', 'TTS', 'Audio', 'Open Source', 'ElevenLabs Alternative', 'Speech'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:15:00.000Z',
+  },
+  {
+    id: 'link-openmontage',
+    title: 'OpenMontage (GitHub)',
+    url: 'https://github.com/calesthio/openmontage',
+    description: 'Open-source agentic video production system with 12 automated pipelines, 100+ creative tools, and modular skills for AI video creation.',
+    categoryId: 'creative-design',
+    tags: ['Video Production', 'AI Video', 'Open Source', 'Motion Design', 'Automation', 'GitHub'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:20:00.000Z',
+  },
 
   // ==========================================
-  // 3. Cyber Security & OSINT (17 links)
+  // 3. Cyber Security & OSINT (19 links)
   // ==========================================
   {
     id: 'link-virustotal',
@@ -588,9 +643,31 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-02T10:15:00.000Z',
   },
+  {
+    id: 'link-ssltrust',
+    title: 'SSLTrust',
+    url: 'https://www.ssltrust.in/',
+    description: 'Digital security and encryption provider offering SSL/TLS certificates, vulnerability validation, and domain security tools.',
+    categoryId: 'cyber-security',
+    tags: ['Cybersecurity', 'SSL', 'TLS', 'Certificates', 'Encryption', 'Domain Security'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:25:00.000Z',
+  },
+  {
+    id: 'link-sherlockproject-portal',
+    title: 'Sherlock Project (Official Portal)',
+    url: 'https://sherlockproject.xyz/',
+    description: 'Official documentation and web portal for the Sherlock Project, the premiere OSINT tool for hunting usernames across 400+ social platforms.',
+    categoryId: 'cyber-security',
+    tags: ['OSINT', 'Sherlock', 'Username Search', 'Reconnaissance', 'Cybersecurity', 'Investigation'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:30:00.000Z',
+  },
 
   // ==========================================
-  // 4. Education & Coding (10 links)
+  // 4. Education & Coding (11 links)
   // ==========================================
   {
     id: 'link-edx',
@@ -701,6 +778,17 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-03-02T10:20:00.000Z',
+  },
+  {
+    id: 'link-codingbat-python',
+    title: 'CodingBat Python',
+    url: 'https://codingbat.com/python',
+    description: 'Interactive online coding practice platform featuring bite-sized Python problem sets, unit tests, and instant feedback.',
+    categoryId: 'education-learning',
+    tags: ['Python', 'Coding Practice', 'Problem Solving', 'Computer Science', 'Interactive'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:35:00.000Z',
   },
 
   // ==========================================
@@ -892,7 +980,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 8. Software & GitHub Repos (5 links)
+  // 8. Software & GitHub Repos (7 links)
   // ==========================================
   {
     id: 'link-openalternative',
@@ -949,9 +1037,31 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-23T13:00:00.000Z',
   },
+  {
+    id: 'link-deepseek-harness',
+    title: 'DeepSeek Harness (GitHub)',
+    url: 'https://github.com/deepseek-ai/deepseek-harness',
+    description: 'Open-source agent harness and plugin-based framework by DeepSeek AI featuring Cordis architecture and proactive coding agent workflows.',
+    categoryId: 'software-tools',
+    tags: ['DeepSeek', 'AI Agents', 'Open Source', 'GitHub', 'Developer Framework', 'Cordis'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:40:00.000Z',
+  },
+  {
+    id: 'link-replit',
+    title: 'Replit',
+    url: 'https://replit.com/',
+    description: 'Browser-based collaborative software development platform and cloud IDE with AI assistance, instant environments, and one-click deployment.',
+    categoryId: 'software-tools',
+    tags: ['Cloud IDE', 'Developer Tools', 'AI Coding', 'Python', 'Web Development', 'Collaboration'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:45:00.000Z',
+  },
 
   // ==========================================
-  // 9. Curated Web Indexes (5 links)
+  // 9. Curated Web Indexes (6 links)
   // ==========================================
   {
     id: 'link-fmhy',
@@ -1008,9 +1118,20 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-29T14:00:00.000Z',
   },
+  {
+    id: 'link-awesome-lists',
+    title: 'Awesome Lists (GitHub)',
+    url: 'https://github.com/sindresorhus/awesome/',
+    description: 'The legendary community-curated directory of awesome topic lists, indexing top open-source libraries, guides, and resources across tech.',
+    categoryId: 'lists',
+    tags: ['Awesome Lists', 'Curated Lists', 'GitHub', 'Directory', 'Open Source', 'Resources'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:50:00.000Z',
+  },
 
   // ==========================================
-  // 10. Movies & Anime (5 links)
+  // 10. Movies & Anime (7 links)
   // ==========================================
   {
     id: 'link-streamex',
@@ -1066,6 +1187,28 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-03-01T10:10:00.000Z',
+  },
+  {
+    id: 'link-2tube',
+    title: '2tube',
+    url: 'https://2tube.me/',
+    description: 'Free online video streaming service featuring trending cinematic movies, popular television shows, and top-rated episodes in HD.',
+    categoryId: 'movies-anime',
+    tags: ['Movies', 'TV Shows', 'Streaming', 'Entertainment', 'HD'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T10:55:00.000Z',
+  },
+  {
+    id: 'link-topcartoons',
+    title: 'TopCartoons.TV',
+    url: 'https://www.topcartoons.tv/',
+    description: 'Nostalgic streaming portal dedicated to classic golden-age cartoons, featuring Tom & Jerry, Looney Tunes, and vintage animated series.',
+    categoryId: 'movies-anime',
+    tags: ['Cartoons', 'Animation', 'Classic TV', 'Streaming', 'Nostalgia'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-03T11:00:00.000Z',
   },
 
   // ==========================================
