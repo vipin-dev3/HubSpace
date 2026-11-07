@@ -116,7 +116,7 @@ export const INITIAL_CATEGORIES = [
 
 export const INITIAL_LINKS = [
   // ==========================================
-  // 1. AI & Machine Learning (16 links)
+  // 1. AI & Machine Learning (24 links)
   // ==========================================
   {
     id: 'link-arena-ai',
@@ -294,9 +294,97 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-03T10:05:00.000Z',
   },
+  {
+    id: 'link-qwen-chat',
+    title: 'Qwen Chat (Alibaba Cloud)',
+    url: 'https://chat.qwen.ai/',
+    description: 'Official conversational AI workspace powered by Alibaba\'s frontier Qwen 2.5 and Qwen-Max models with coding and multilingual intelligence.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'LLM', 'Qwen', 'Alibaba', 'Chatbot', 'Frontier Models'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:00:00.000Z',
+  },
+  {
+    id: 'link-stepfun',
+    title: 'StepFun Platform',
+    url: 'https://platform.stepfun.ai/',
+    description: 'Developer API and research platform for StepFun\'s Step-1, Step-2, and Step-1V large language and multimodal models.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'LLM', 'Multimodal', 'Developer API', 'StepFun'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:05:00.000Z',
+  },
+  {
+    id: 'link-kimi-ai',
+    title: 'Kimi AI (Moonshot)',
+    url: 'https://www.kimi.ai/en',
+    description: 'Advanced long-context conversational AI by Moonshot AI supporting 2M+ token contexts, deep research, and web-grounded analysis.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'Long Context', 'Moonshot AI', 'Chatbot', 'Research'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:10:00.000Z',
+  },
+  {
+    id: 'link-ling-3-1-flash',
+    title: 'Ling-3.1-Flash (InclusionAI)',
+    url: 'https://huggingface.co/inclusionAI/Ling-3.1-flash',
+    description: 'Open-weight 560B hybrid-linear MoE reasoning model with 25B active parameters and Gated MLA attention optimized for agentic coding.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'Open Weights', 'MoE', 'Hugging Face', 'Reasoning', 'LLM'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:15:00.000Z',
+  },
+  {
+    id: 'link-deepseek-ai',
+    title: 'DeepSeek AI',
+    url: 'https://www.deepseek.com/en/',
+    description: 'Frontier open-source AI lab and creators of DeepSeek-V3, DeepSeek-R1 reasoning models, and state-of-the-art developer architectures.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'DeepSeek', 'Reasoning Model', 'Open Source', 'Frontier AI'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:20:00.000Z',
+  },
+  {
+    id: 'link-ernie-bot',
+    title: 'ERNIE Bot (Baidu)',
+    url: 'https://ernie.baidu.com/',
+    description: 'Flagship enterprise and consumer generative AI assistant by Baidu built on the ERNIE foundation model architecture.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'Baidu', 'ERNIE', 'LLM', 'Chatbot'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:25:00.000Z',
+  },
+  {
+    id: 'link-doubao',
+    title: 'Doubao (ByteDance)',
+    url: 'https://www.doubao.com/',
+    description: 'ByteDance\'s flagship conversational AI assistant powering smart search, writing, coding assistance, and multimodal workflows.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'ByteDance', 'Doubao', 'Chatbot', 'Productivity'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:30:00.000Z',
+  },
+  {
+    id: 'link-tencent-yuanbao',
+    title: 'Tencent Yuanbao',
+    url: 'https://yuanbao.tencent.com/',
+    description: 'Tencent\'s flagship AI assistant powered by the Hunyuan foundation model with deep WeChat ecosystem search and document analysis.',
+    categoryId: 'ai-tools',
+    tags: ['AI', 'Tencent', 'Hunyuan', 'Yuanbao', 'WeChat', 'Assistant'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:35:00.000Z',
+  },
 
   // ==========================================
-  // 2. Creative Studio & Design (14 links)
+  // 2. Creative Studio & Design (17 links)
   // ==========================================
   {
     id: 'link-jitter-video',
@@ -452,9 +540,42 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-03T10:20:00.000Z',
   },
+  {
+    id: 'link-orbis-studio',
+    title: 'Orbis Studio',
+    url: 'https://studio.orbismedia.ca/',
+    description: 'Pay-per-use generative media studio to generate images, video, and audio using 30+ top AI models without recurring subscriptions.',
+    categoryId: 'creative-design',
+    tags: ['Generative AI', 'Video Creation', 'Image Generation', 'Pay-Per-Use', 'Media Studio'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:40:00.000Z',
+  },
+  {
+    id: 'link-pollo-ai',
+    title: 'Pollo AI',
+    url: 'https://pollo.ai/',
+    description: 'All-in-one generative AI video suite and model aggregator converting text and images into cinematic videos and social media ads.',
+    categoryId: 'creative-design',
+    tags: ['AI Video', 'Text-to-Video', 'Creative', 'Animation', 'Marketing'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:45:00.000Z',
+  },
+  {
+    id: 'link-dreamina',
+    title: 'Dreamina (CapCut)',
+    url: 'https://dreamina.capcut.com/',
+    description: 'ByteDance and CapCut\'s generative AI art and video creator featuring text-to-image synthesis, video motion canvas, and image expansion.',
+    categoryId: 'creative-design',
+    tags: ['Generative Art', 'CapCut', 'AI Video', 'Image Expansion', 'ByteDance'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:50:00.000Z',
+  },
 
   // ==========================================
-  // 3. Cyber Security & OSINT (19 links)
+  // 3. Cyber Security & OSINT (20 links)
   // ==========================================
   {
     id: 'link-virustotal',
@@ -665,9 +786,20 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-03T10:30:00.000Z',
   },
+  {
+    id: 'link-pwn-college',
+    title: 'pwn.college',
+    url: 'https://pwn.college/',
+    description: 'Open-source cybersecurity education dojo created at Arizona State University teaching system security, binary exploitation, and reverse engineering.',
+    categoryId: 'cyber-security',
+    tags: ['Cybersecurity', 'Ethical Hacking', 'Reverse Engineering', 'Exploitation', 'CTF', 'Education'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-04T10:55:00.000Z',
+  },
 
   // ==========================================
-  // 4. Education & Coding (11 links)
+  // 4. Education & Coding (12 links)
   // ==========================================
   {
     id: 'link-edx',
@@ -789,6 +921,17 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-03-03T10:35:00.000Z',
+  },
+  {
+    id: 'link-ai-engineering-scratch',
+    title: 'AI Engineering From Scratch (GitHub)',
+    url: 'https://github.com/rohitg00/ai-engineering-from-scratch',
+    description: 'Open-source comprehensive curriculum and hands-on code repository teaching AI engineering, LLM architectures, RAG, and production agents.',
+    categoryId: 'education-learning',
+    tags: ['AI Engineering', 'Curriculum', 'LLMs', 'RAG', 'GitHub', 'Education'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T11:00:00.000Z',
   },
 
   // ==========================================
@@ -980,7 +1123,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 8. Software & GitHub Repos (7 links)
+  // 8. Software & GitHub Repos (10 links)
   // ==========================================
   {
     id: 'link-openalternative',
@@ -1059,6 +1202,39 @@ export const INITIAL_LINKS = [
     clickCount: 0,
     createdAt: '2026-03-03T10:45:00.000Z',
   },
+  {
+    id: 'link-github-ecc',
+    title: 'ECC - Agent Performance System (GitHub)',
+    url: 'https://github.com/affaan-m/ECC',
+    description: 'Agent harness performance optimization system providing skills, instincts, memory, and security for Claude Code, Codex, and Cursor.',
+    categoryId: 'software-tools',
+    tags: ['Claude Code', 'Agent Harness', 'Developer Tools', 'GitHub', 'AI Agents'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T11:05:00.000Z',
+  },
+  {
+    id: 'link-zcode',
+    title: 'ZCode (z.ai)',
+    url: 'https://zcode.z.ai/en',
+    description: 'Official agent harness and coding workbench for GLM-5.3 by Zhipu AI, combining agentic coding, automated reviews, and tool integration.',
+    categoryId: 'software-tools',
+    tags: ['AI Coding', 'GLM-5.3', 'Agentic Coding', 'Developer Workbench', 'Zhipu AI'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T11:10:00.000Z',
+  },
+  {
+    id: 'link-rustdesk',
+    title: 'RustDesk (GitHub)',
+    url: 'https://github.com/rustdesk/rustdesk',
+    description: 'Open-source, self-hosted remote desktop software written in Rust as a secure, full-featured alternative to TeamViewer and AnyDesk.',
+    categoryId: 'software-tools',
+    tags: ['Remote Desktop', 'Rust', 'Open Source', 'Self-Hosted', 'GitHub', 'Software'],
+    isPinned: true,
+    clickCount: 0,
+    createdAt: '2026-03-04T11:15:00.000Z',
+  },
 
   // ==========================================
   // 9. Curated Web Indexes (6 links)
@@ -1131,7 +1307,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 10. Movies & Anime (7 links)
+  // 10. Movies & Anime (8 links)
   // ==========================================
   {
     id: 'link-streamex',
@@ -1209,6 +1385,17 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-03-03T11:00:00.000Z',
+  },
+  {
+    id: 'link-kartoons',
+    title: 'Kartoons',
+    url: 'https://kartoons.to/home',
+    description: 'Free streaming platform streaming classic cartoons and anime series dubbed in Hindi and English with high-definition playback.',
+    categoryId: 'movies-anime',
+    tags: ['Cartoons', 'Anime', 'Hindi Dubbed', 'Streaming', 'Animation'],
+    isPinned: false,
+    clickCount: 0,
+    createdAt: '2026-03-04T11:20:00.000Z',
   },
 
   // ==========================================
