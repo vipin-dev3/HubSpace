@@ -384,7 +384,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 2. Creative Studio & Design (17 links)
+  // 2. Creative Studio & Design (15 links)
   // ==========================================
   {
     id: 'link-jitter-video',
@@ -396,17 +396,6 @@ export const INITIAL_LINKS = [
     isPinned: true,
     clickCount: 0,
     createdAt: '2026-01-22T10:00:00.000Z',
-  },
-  {
-    id: 'link-logoai-animated',
-    title: 'LogoAI Animated Logo',
-    url: 'https://www.logoai.com/design/animated-logo',
-    description: 'Automated AI branding engine transforming static logos into high-resolution animated motion graphics.',
-    categoryId: 'creative-design',
-    tags: ['Logo', 'Animation', 'Branding', 'Design'],
-    isPinned: false,
-    clickCount: 0,
-    createdAt: '2026-01-23T11:00:00.000Z',
   },
   {
     id: 'link-logo-diffusion',
@@ -541,17 +530,6 @@ export const INITIAL_LINKS = [
     createdAt: '2026-03-03T10:20:00.000Z',
   },
   {
-    id: 'link-orbis-studio',
-    title: 'Orbis Studio',
-    url: 'https://studio.orbismedia.ca/',
-    description: 'Pay-per-use generative media studio to generate images, video, and audio using 30+ top AI models without recurring subscriptions.',
-    categoryId: 'creative-design',
-    tags: ['Generative AI', 'Video Creation', 'Image Generation', 'Pay-Per-Use', 'Media Studio'],
-    isPinned: false,
-    clickCount: 0,
-    createdAt: '2026-03-04T10:40:00.000Z',
-  },
-  {
     id: 'link-pollo-ai',
     title: 'Pollo AI',
     url: 'https://pollo.ai/',
@@ -575,7 +553,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 3. Cyber Security & OSINT (20 links)
+  // 3. Cyber Security & OSINT (18 links)
   // ==========================================
   {
     id: 'link-virustotal',
@@ -653,17 +631,6 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-02-07T16:00:00.000Z',
-  },
-  {
-    id: 'link-lookups-io',
-    title: 'Lookups.io',
-    url: 'https://lookups.io/',
-    description: 'Real-time reverse lookup toolkit for usernames, phone numbers, email domains, and investigative intelligence.',
-    categoryId: 'cyber-security',
-    tags: ['OSINT', 'Reverse Lookup', 'Intelligence', 'Security'],
-    isPinned: false,
-    clickCount: 0,
-    createdAt: '2026-02-08T17:00:00.000Z',
   },
   {
     id: 'link-rosint',
@@ -763,17 +730,6 @@ export const INITIAL_LINKS = [
     isPinned: false,
     clickCount: 0,
     createdAt: '2026-03-02T10:15:00.000Z',
-  },
-  {
-    id: 'link-ssltrust',
-    title: 'SSLTrust',
-    url: 'https://www.ssltrust.in/',
-    description: 'Digital security and encryption provider offering SSL/TLS certificates, vulnerability validation, and domain security tools.',
-    categoryId: 'cyber-security',
-    tags: ['Cybersecurity', 'SSL', 'TLS', 'Certificates', 'Encryption', 'Domain Security'],
-    isPinned: false,
-    clickCount: 0,
-    createdAt: '2026-03-03T10:25:00.000Z',
   },
   {
     id: 'link-sherlockproject-portal',
@@ -1027,7 +983,7 @@ export const INITIAL_LINKS = [
   },
 
   // ==========================================
-  // 6. Presentations & Slides (3 links)
+  // 6. Presentations & Slides (2 links)
   // ==========================================
   {
     id: 'link-gamma',
@@ -1039,17 +995,6 @@ export const INITIAL_LINKS = [
     isPinned: true,
     clickCount: 0,
     createdAt: '2026-03-10T10:00:00.000Z',
-  },
-  {
-    id: 'link-plusai',
-    title: 'Plus AI',
-    url: 'https://plusai.com/',
-    description: 'Generative AI slide assistant for Google Slides and PowerPoint producing professional slide designs in seconds.',
-    categoryId: 'presentation-pdf',
-    tags: ['Slides', 'Google Slides', 'PowerPoint', 'AI'],
-    isPinned: false,
-    clickCount: 0,
-    createdAt: '2026-03-11T11:00:00.000Z',
   },
   {
     id: 'link-retaincards',

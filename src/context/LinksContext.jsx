@@ -4,7 +4,7 @@ import { INITIAL_CATEGORIES, INITIAL_LINKS } from '../data/linksData';
 
 const LinksContext = createContext();
 
-const CURRENT_DATA_VERSION = 'v13_frontier_models';
+const CURRENT_DATA_VERSION = 'v14_free_only_curation';
 
 function syncStorageWithInitialData() {
   try {
