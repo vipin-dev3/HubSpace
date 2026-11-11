@@ -4,7 +4,46 @@ import { INITIAL_CATEGORIES, INITIAL_LINKS } from '../data/linksData';
 
 const LinksContext = createContext();
 
-const CURRENT_DATA_VERSION = 'v14_free_only_curation';
+const CURRENT_DATA_VERSION = 'v15_purge_logoai_and_paid';
+
+// Explicitly banned or removed services (paid-only, paywalled, or legacy)
+const BANNED_URL_SUBSTRINGS = [
+  'logoai.com',
+  'ssltrust.in',
+  'studio.orbismedia.ca',
+  'lookups.io',
+  'plusai.com',
+  'chatgpt.com',
+  'claude.ai',
+];
+
+const BANNED_LINK_IDS = new Set([
+  'link-logoai-animated',
+  'link-orbis-studio',
+  'link-lookups-io',
+  'link-ssltrust',
+  'link-plusai',
+]);
+
+function isBannedOrRemoved(link) {
+  if (!link) return true;
+  if (link.id && BANNED_LINK_IDS.has(link.id)) return true;
+  const rawUrl = (link.url || '').toLowerCase();
+  return BANNED_URL_SUBSTRINGS.some((sub) => rawUrl.includes(sub));
+}
+
+function isCustomUserLink(link, seedIds, seedUrls) {
+  if (!link || !link.id || !link.url) return false;
+  if (isBannedOrRemoved(link)) return false;
+
+  const urlClean = link.url.trim().toLowerCase();
+  if (seedIds.has(link.id) || seedUrls.has(urlClean)) return false;
+
+  // Custom links created by users have dynamic ID format: link-<timestamp>-<random>
+  const parts = link.id.split('-');
+  const isUserTimestampId = parts.length >= 3 && /^\d{10,}$/.test(parts[1]);
+  return isUserTimestampId;
+}
 
 function syncStorageWithInitialData() {
   try {
@@ -26,20 +65,18 @@ function syncStorageWithInitialData() {
     const parsedLinks = JSON.parse(savedLinksRaw);
     const parsedCategories = savedCategoriesRaw ? JSON.parse(savedCategoriesRaw) : INITIAL_CATEGORIES;
 
-    // Check if legacy ChatGPT or Claude links are present
-    const hasLegacy = Array.isArray(parsedLinks) && parsedLinks.some(
-      (l) => l.url?.includes('chatgpt.com') || l.url?.includes('claude.ai')
-    );
+    // Check if any banned, legacy, or removed links exist in current stored links
+    const hasBannedOrRemoved = Array.isArray(parsedLinks) && parsedLinks.some(isBannedOrRemoved);
 
-    // If already on latest version, valid array, and no legacy links, return stored data as-is
-    if (savedVersion === CURRENT_DATA_VERSION && Array.isArray(parsedLinks) && !hasLegacy) {
+    // If already on latest version, valid array, and no banned/removed links, return stored data
+    if (savedVersion === CURRENT_DATA_VERSION && Array.isArray(parsedLinks) && !hasBannedOrRemoved) {
       return {
         categories: parsedCategories,
         links: parsedLinks,
       };
     }
 
-    // Version migration or legacy cleanup: preserve user clicks and custom links
+    // Version migration or cleanup: preserve user clicks and genuine custom user links
     const clickMap = new Map();
     if (Array.isArray(parsedLinks)) {
       parsedLinks.forEach((l) => {
@@ -61,20 +98,14 @@ function syncStorageWithInitialData() {
       };
     });
 
-    // Keep any user-added custom links (not in INITIAL_LINKS and not legacy)
+    // Keep only genuine user-added custom links (excluding old deleted seed links)
     const seedIds = new Set(INITIAL_LINKS.map((l) => l.id));
     const seedUrls = new Set(INITIAL_LINKS.map((l) => l.url.trim().toLowerCase()));
     const customLinks = Array.isArray(parsedLinks)
-      ? parsedLinks.filter(
-          (l) =>
-            !seedIds.has(l.id) &&
-            !seedUrls.has(l.url?.trim().toLowerCase()) &&
-            !l.url?.includes('chatgpt.com') &&
-            !l.url?.includes('claude.ai')
-        )
+      ? parsedLinks.filter((l) => isCustomUserLink(l, seedIds, seedUrls))
       : [];
 
-    const finalLinks = [...mergedLinks, ...customLinks];
+    const finalLinks = [...mergedLinks, ...customLinks].filter((l) => !isBannedOrRemoved(l));
 
     localStorage.setItem('hubspace_data_version', CURRENT_DATA_VERSION);
     localStorage.setItem('hubspace_categories', JSON.stringify(INITIAL_CATEGORIES));
